@@ -36,7 +36,8 @@ jobs:
         echo "export PATH=\$PATH:$(python -m site --user-base)/bin" >> $GITHUB_ENV
     - name: dbt-action
       uses: mwhitaker/dbt-action@master
-    - name: Run dbt
+      with:
+        dbt_command: "dbt run --profiles-dir ."
       env:
         DB_HOST: ${{secrets.DB_HOST}}
         DB_USERNAME: ${{secrets.DB_USERNAME}}
@@ -44,9 +45,6 @@ jobs:
         DB_SCHEMA: ${{secrets.DB_SCHEMA}}
         DB_PORT: ${{secrets.DB_PORT}}
         DB_DATABASE: ${{secrets.DB_DATABASE}}
-      run: |
-        "dbt test"
-        "dbt clean"
     - name: Lint with flake8
       run: |
         # stop the build if there are Python syntax errors or undefined names

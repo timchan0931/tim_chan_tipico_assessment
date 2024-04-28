@@ -33,5 +33,6 @@ for item in data:
 
 market_headers= ['market_id','name','type','parameters','status','mostBalancedLine','spgEligable']
 outcome_headers= ['outcome_id','name','isTraded','trueOdds','foramtDecimal','formatAmerican','status','trueOdds']
-pd.DataFrame(market_lst).to_csv('markets.csv',index=False,quoting=csv.QUOTE_ALL,header=market_headers)
-pd.DataFrame(outcome_lst).to_csv('outcomes.csv',index=False,quoting=csv.QUOTE_ALL,header=outcome_headers)
+
+pd.DataFrame(market_lst).to_csv('./seeds/markets.csv',index=False,quoting=csv.QUOTE_ALL,header=market_headers)
+pd.DataFrame(outcome_lst).to_csv('./seeds/outcomes.csv',index=False,quoting=csv.QUOTE_ALL,header=outcome_headers)

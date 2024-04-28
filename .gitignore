@@ -1,5 +1,1 @@
-./target/*
-logs/dbt.log
-target/graph_summary.json
-target/manifest.json
-target/run_results.json
+**/.DS_Store

@@ -30,7 +30,7 @@ jobs:
         pip install dbt-core
         pip install dbt-redshift
         pip install pandas
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; f
+        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Add dbt to PATH
       run: |
         echo "::add-path::$(python -m site --user-base)/bin"

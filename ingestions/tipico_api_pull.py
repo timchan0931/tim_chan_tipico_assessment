@@ -47,17 +47,17 @@ for item in data:
                             ,'formatAmerican': m.get('formatAmerican',0.0)
                             ,'status': m.get('status','NA')
                             ,'trueOdds': m.get('trueOdds',0.0)})
-        eventDetails_lst.append({'block_cashout': item.get('eventDetails','NA').get('block_cashout','NA')
-                            ,'longTermEventType': item.get('eventDetails','NA').get('longTermEventType','NA')
-                            ,'outrightType': item.get('eventDetails','NA').get('outrightType','NA')
-                            ,'subgroupNameKey': item.get('eventDetails','NA').get('subgroupNameKey','NA')
-                            ,'subgroupIdKey': item.get('eventDetails','NA').get('subgroupIdKey',-9999)
-                            ,'tiebreak': item.get('eventDetails','NA').get('tiebreak','NA')
-                            ,'best_of_sets': item.get('eventDetails','NA').get('best_of_sets','NA')})
-        group_lst.append({'id': item.get('group','NA').get('id',-9999)
-                            ,'name': item.get('group','NA').get('name','NA')
-                            ,'parentGroupName': item.get('group','NA').get('parentGroup','NA').get('name','NA')
-                            ,'parentGroupId': item.get('group','NA').get('parentGroup','NA').get('id','NA')})
+    eventDetails_lst.append({'block_cashout': item.get('eventDetails','NA').get('block_cashout','NA')
+                        ,'longTermEventType': item.get('eventDetails','NA').get('longTermEventType','NA')
+                        ,'outrightType': item.get('eventDetails','NA').get('outrightType','NA')
+                        ,'subgroupNameKey': item.get('eventDetails','NA').get('subgroupNameKey','NA')
+                        ,'subgroupIdKey': item.get('eventDetails','NA').get('subgroupIdKey',-9999)
+                        ,'tiebreak': item.get('eventDetails','NA').get('tiebreak','NA')
+                        ,'best_of_sets': item.get('eventDetails','NA').get('best_of_sets','NA')})
+    group_lst.append({'id': item.get('group','NA').get('id',-9999)
+                        ,'name': item.get('group','NA').get('name','NA')
+                        ,'parentGroupName': item.get('group','NA').get('parentGroup','NA').get('name','NA')
+                        ,'parentGroupId': item.get('group','NA').get('parentGroup','NA').get('id','NA')})
 
 market_headers= ['market_id','name','type','parameters','status','mostBalancedLine','spgEligable']
 outcome_headers= ['outcome_id','name','isTraded','trueOdds','foramtDecimal','formatAmerican','status','trueOdds']
@@ -72,6 +72,9 @@ pd.DataFrame(outcome_lst).to_csv('./seeds/outcome_raw_data.csv',index=False,quot
 # pd.DataFrame(eventDetails_lst).to_json('./seeds/eventDetails.json',index=False,orient='records',lines=False)
 # pd.DataFrame(group_lst).to_json('./seeds/group_raw_data.json',index=False,orient='records',lines=False)
 
-pd.DataFrame(group_lst).to_csv('./seeds/group_raw_data_test.csv',header=group_headers,index=False)
+pd.DataFrame(group_lst).to_csv('./seeds/group_raw_data_test.csv',header=group_headers,quoting=csv.QUOTE_ALL,index=False)
+
+pd.DataFrame(eventDetails_lst).to_csv('./seeds/event_dtls_raw_data.csv',quoting=csv.QUOTE_ALL,index=False)
+
 # pd.DateOffset(outcome_lst).to_csv('./seeds/outcomes_raw_data_test.csv',index=False)
 # pd.DataFrame(outcome_lst).to_csv('./seeds/outcomes_raw_data.csv',header=outcome_headers,index=False)

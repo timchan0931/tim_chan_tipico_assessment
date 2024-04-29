@@ -35176,3 +35176,432 @@ drop table if exists "dev"."timothy_chan"."specifier__dbt_backup" cascade
 [0m21:37:54.549300 [debug] [MainThread]: Command `dbt run` succeeded at 21:37:54.549035 after 23.88 seconds
 [0m21:37:54.550001 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb2f924f910>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb2f9d02f70>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fb2d821af40>]}
 [0m21:37:54.550669 [debug] [MainThread]: Flushing usage events
+[0m21:52:13.360856 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcf39198580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcf2970e6d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcf08013be0>]}
+
+
+============================== 21:52:13.367249 | 72a04797-5d47-4738-8f61-db0c1970edd0 ==============================
+[0m21:52:13.367249 [info ] [MainThread]: Running with dbt=1.7.0
+[0m21:52:13.368124 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/tim/.dbt', 'fail_fast': 'False', 'warn_error': 'None', 'log_path': '/Users/tim/tipico_git/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt clean', 'introspect': 'True', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m21:52:13.661413 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '72a04797-5d47-4738-8f61-db0c1970edd0', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcf08013250>]}
+[0m21:52:13.676094 [debug] [MainThread]: Resource report: {"command_name": "clean", "command_success": true, "command_wall_clock_time": 0.45863545, "process_user_time": 3.205322, "process_kernel_time": 0.496954, "process_mem_max_rss": "101036032", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m21:52:13.677567 [debug] [MainThread]: Command `dbt clean` succeeded at 21:52:13.676967 after 0.46 seconds
+[0m21:52:13.679337 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcf39198580>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcf3a13bb50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fcf183aa310>]}
+[0m21:52:13.680046 [debug] [MainThread]: Flushing usage events
+[0m21:54:53.638648 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8538b27850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8539948fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f85399481f0>]}
+
+
+============================== 21:54:53.645045 | 1b81705a-4f2f-484c-8db4-cae22681600f ==============================
+[0m21:54:53.645045 [info ] [MainThread]: Running with dbt=1.7.0
+[0m21:54:53.645904 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'fail_fast': 'False', 'profiles_dir': '/Users/tim/.dbt', 'log_path': '/Users/tim/tipico_git/logs', 'debug': 'False', 'version_check': 'True', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'log_format': 'default', 'static_parser': 'True', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m21:54:54.209713 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': '1b81705a-4f2f-484c-8db4-cae22681600f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8539932a30>]}
+[0m21:54:54.332242 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': '1b81705a-4f2f-484c-8db4-cae22681600f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8539ab8640>]}
+[0m21:54:54.334520 [info ] [MainThread]: Registered adapter: redshift=1.7.7
+[0m21:54:54.350255 [debug] [MainThread]: checksum: 8434eacd4ffdf0ca3ab22bf0e2d55b45306c9599613e842b959405abc489e606, vars: {}, profile: , target: , version: 1.7.0
+[0m21:54:54.353033 [info ] [MainThread]: Unable to do partial parsing because saved manifest not found. Starting full parse.
+[0m21:54:54.353667 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'partial_parser', 'label': '1b81705a-4f2f-484c-8db4-cae22681600f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8549fd2eb0>]}
+[0m21:54:56.196152 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': '1b81705a-4f2f-484c-8db4-cae22681600f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f853a015e50>]}
+[0m21:54:56.212709 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': '1b81705a-4f2f-484c-8db4-cae22681600f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f854a0287f0>]}
+[0m21:54:56.213456 [info ] [MainThread]: Found 4 models, 2 seeds, 2 sources, 0 exposures, 0 metrics, 467 macros, 0 groups, 0 semantic models
+[0m21:54:56.214004 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1b81705a-4f2f-484c-8db4-cae22681600f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f854a028940>]}
+[0m21:54:56.216156 [info ] [MainThread]: 
+[0m21:54:56.217265 [debug] [MainThread]: Acquiring new redshift connection 'master'
+[0m21:54:56.219155 [debug] [ThreadPool]: Acquiring new redshift connection 'list_dev'
+[0m21:54:56.243814 [debug] [ThreadPool]: Using redshift connection "list_dev"
+[0m21:54:56.244489 [debug] [ThreadPool]: On list_dev: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "connection_name": "list_dev"} */
+
+    select distinct nspname from pg_namespace
+[0m21:54:56.244991 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:54:56.249662 [debug] [ThreadPool]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m21:54:56.250527 [debug] [ThreadPool]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m21:54:56.764214 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m21:54:56.772144 [debug] [ThreadPool]: On list_dev: Close
+[0m21:54:56.777564 [debug] [ThreadPool]: Acquiring new redshift connection 'list_dev_timothy_chan'
+[0m21:54:56.797121 [debug] [ThreadPool]: Using redshift connection "list_dev_timothy_chan"
+[0m21:54:56.797921 [debug] [ThreadPool]: On list_dev_timothy_chan: BEGIN
+[0m21:54:56.798545 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m21:54:56.799383 [debug] [ThreadPool]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m21:54:56.800028 [debug] [ThreadPool]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m21:54:57.145684 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m21:54:57.148763 [debug] [ThreadPool]: Using redshift connection "list_dev_timothy_chan"
+[0m21:54:57.150782 [debug] [ThreadPool]: On list_dev_timothy_chan: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "connection_name": "list_dev_timothy_chan"} */
+select
+        table_catalog as database,
+        table_name as name,
+        table_schema as schema,
+        'table' as type
+    from information_schema.tables
+    where table_schema ilike 'timothy_chan'
+    and table_type = 'BASE TABLE'
+    union all
+    select
+      table_catalog as database,
+      table_name as name,
+      table_schema as schema,
+      case
+        when view_definition ilike '%create materialized view%'
+          then 'materialized_view'
+        else 'view'
+      end as type
+    from information_schema.views
+    where table_schema ilike 'timothy_chan'
+[0m21:54:57.215075 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m21:54:57.221869 [debug] [ThreadPool]: On list_dev_timothy_chan: ROLLBACK
+[0m21:54:57.275562 [debug] [ThreadPool]: On list_dev_timothy_chan: Close
+[0m21:54:57.305847 [debug] [MainThread]: Using redshift connection "master"
+[0m21:54:57.306776 [debug] [MainThread]: On master: BEGIN
+[0m21:54:57.307479 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m21:54:57.308426 [debug] [MainThread]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m21:54:57.309131 [debug] [MainThread]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m21:54:57.632418 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m21:54:57.633556 [debug] [MainThread]: Using redshift connection "master"
+[0m21:54:57.634644 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "connection_name": "master"} */
+with
+    relation as (
+        select
+            pg_class.oid as relation_id,
+            pg_class.relname as relation_name,
+            pg_class.relnamespace as schema_id,
+            pg_namespace.nspname as schema_name,
+            pg_class.relkind as relation_type
+        from pg_class
+        join pg_namespace
+          on pg_class.relnamespace = pg_namespace.oid
+        where pg_namespace.nspname != 'information_schema'
+          and pg_namespace.nspname not like 'pg\_%'
+    ),
+    dependency as (
+        select distinct
+            coalesce(pg_rewrite.ev_class, pg_depend.objid) as dep_relation_id,
+            pg_depend.refobjid as ref_relation_id,
+            pg_depend.refclassid as ref_class_id
+        from pg_depend
+        left join pg_rewrite
+          on pg_depend.objid = pg_rewrite.oid
+        where coalesce(pg_rewrite.ev_class, pg_depend.objid) != pg_depend.refobjid
+    )
+
+select distinct
+    dep.schema_name as dependent_schema,
+    dep.relation_name as dependent_name,
+    ref.schema_name as referenced_schema,
+    ref.relation_name as referenced_name
+from dependency
+join relation ref
+    on dependency.ref_relation_id = ref.relation_id
+join relation dep
+    on dependency.dep_relation_id = dep.relation_id
+[0m21:54:57.732923 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m21:54:57.738583 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': '1b81705a-4f2f-484c-8db4-cae22681600f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f853a08ac40>]}
+[0m21:54:57.740736 [debug] [MainThread]: On master: ROLLBACK
+[0m21:54:57.809942 [debug] [MainThread]: Using redshift connection "master"
+[0m21:54:57.811745 [debug] [MainThread]: On master: BEGIN
+[0m21:54:57.837302 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m21:54:57.839026 [debug] [MainThread]: On master: COMMIT
+[0m21:54:57.840667 [debug] [MainThread]: Using redshift connection "master"
+[0m21:54:57.841766 [debug] [MainThread]: On master: COMMIT
+[0m21:54:57.893573 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m21:54:57.895465 [debug] [MainThread]: On master: Close
+[0m21:54:57.899193 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m21:54:57.900521 [info ] [MainThread]: 
+[0m21:54:57.907115 [debug] [Thread-1  ]: Began running node model.tipico.group
+[0m21:54:57.908845 [info ] [Thread-1  ]: 1 of 4 START sql table model timothy_chan.group ................................ [RUN]
+[0m21:54:57.910943 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_dev, now model.tipico.group)
+[0m21:54:57.911986 [debug] [Thread-1  ]: Began compiling node model.tipico.group
+[0m21:54:57.919238 [debug] [Thread-1  ]: Writing injected SQL for node "model.tipico.group"
+[0m21:54:57.921304 [debug] [Thread-1  ]: Timing info for model.tipico.group (compile): 21:54:57.912539 => 21:54:57.920749
+[0m21:54:57.922178 [debug] [Thread-1  ]: Began executing node model.tipico.group
+[0m21:54:57.995917 [debug] [Thread-1  ]: Writing runtime sql for node "model.tipico.group"
+[0m21:54:57.998390 [debug] [Thread-1  ]: Using redshift connection "model.tipico.group"
+[0m21:54:57.998964 [debug] [Thread-1  ]: On model.tipico.group: BEGIN
+[0m21:54:57.999485 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m21:54:58.000205 [debug] [Thread-1  ]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m21:54:58.000775 [debug] [Thread-1  ]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m21:54:58.529175 [debug] [Thread-1  ]: SQL status: SUCCESS in 1.0 seconds
+[0m21:54:58.530527 [debug] [Thread-1  ]: Using redshift connection "model.tipico.group"
+[0m21:54:58.531788 [debug] [Thread-1  ]: On model.tipico.group: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.group"} */
+
+  
+    
+
+  create  table
+    "dev"."timothy_chan"."group__dbt_tmp"
+    
+    
+    
+  as (
+    
+
+select distinct *
+,SYSDATE as ads_dtm_created
+,SYSDATE as ads_dtm_last_updated
+from "dev"."timothy_chan"."group_raw_data_test"
+  );
+[0m21:54:58.965320 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:54:58.990066 [debug] [Thread-1  ]: Using redshift connection "model.tipico.group"
+[0m21:54:58.991191 [debug] [Thread-1  ]: On model.tipico.group: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.group"} */
+alter table "dev"."timothy_chan"."group" rename to "group__dbt_backup"
+[0m21:54:59.148322 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:54:59.164827 [debug] [Thread-1  ]: Using redshift connection "model.tipico.group"
+[0m21:54:59.165993 [debug] [Thread-1  ]: On model.tipico.group: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.group"} */
+alter table "dev"."timothy_chan"."group__dbt_tmp" rename to "group"
+[0m21:54:59.245084 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:54:59.294805 [debug] [Thread-1  ]: On model.tipico.group: COMMIT
+[0m21:54:59.295927 [debug] [Thread-1  ]: Using redshift connection "model.tipico.group"
+[0m21:54:59.296497 [debug] [Thread-1  ]: On model.tipico.group: COMMIT
+[0m21:54:59.988650 [debug] [Thread-1  ]: SQL status: SUCCESS in 1.0 seconds
+[0m21:54:59.989952 [debug] [Thread-1  ]: Using redshift connection "model.tipico.group"
+[0m21:54:59.990585 [debug] [Thread-1  ]: On model.tipico.group: BEGIN
+[0m21:55:00.038591 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:00.048824 [debug] [Thread-1  ]: Applying DROP to: "dev"."timothy_chan"."group__dbt_backup"
+[0m21:55:00.055774 [debug] [Thread-1  ]: Using redshift connection "model.tipico.group"
+[0m21:55:00.056370 [debug] [Thread-1  ]: On model.tipico.group: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.group"} */
+drop table if exists "dev"."timothy_chan"."group__dbt_backup" cascade
+[0m21:55:00.103316 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:00.104782 [debug] [Thread-1  ]: On model.tipico.group: COMMIT
+[0m21:55:00.105481 [debug] [Thread-1  ]: Using redshift connection "model.tipico.group"
+[0m21:55:00.106070 [debug] [Thread-1  ]: On model.tipico.group: COMMIT
+[0m21:55:00.604392 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:00.608649 [debug] [Thread-1  ]: Using redshift connection "model.tipico.group"
+[0m21:55:00.610782 [debug] [Thread-1  ]: On model.tipico.group: BEGIN
+[0m21:55:00.634572 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:00.637869 [debug] [Thread-1  ]: Timing info for model.tipico.group (execute): 21:54:57.922655 => 21:55:00.637096
+[0m21:55:00.639009 [debug] [Thread-1  ]: On model.tipico.group: ROLLBACK
+[0m21:55:00.690036 [debug] [Thread-1  ]: On model.tipico.group: Close
+[0m21:55:00.696130 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b81705a-4f2f-484c-8db4-cae22681600f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f853a08ac40>]}
+[0m21:55:00.700209 [info ] [Thread-1  ]: 1 of 4 OK created sql table model timothy_chan.group ........................... [[32mSUCCESS[0m in 2.79s]
+[0m21:55:00.702008 [debug] [Thread-1  ]: Finished running node model.tipico.group
+[0m21:55:00.703214 [debug] [Thread-1  ]: Began running node model.tipico.outcome
+[0m21:55:00.704699 [info ] [Thread-1  ]: 2 of 4 START sql table model timothy_chan.outcome .............................. [RUN]
+[0m21:55:00.706797 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.tipico.group, now model.tipico.outcome)
+[0m21:55:00.707910 [debug] [Thread-1  ]: Began compiling node model.tipico.outcome
+[0m21:55:00.715674 [debug] [Thread-1  ]: Writing injected SQL for node "model.tipico.outcome"
+[0m21:55:00.717394 [debug] [Thread-1  ]: Timing info for model.tipico.outcome (compile): 21:55:00.708556 => 21:55:00.716845
+[0m21:55:00.718288 [debug] [Thread-1  ]: Began executing node model.tipico.outcome
+[0m21:55:00.729180 [debug] [Thread-1  ]: Writing runtime sql for node "model.tipico.outcome"
+[0m21:55:00.731812 [debug] [Thread-1  ]: Using redshift connection "model.tipico.outcome"
+[0m21:55:00.732469 [debug] [Thread-1  ]: On model.tipico.outcome: BEGIN
+[0m21:55:00.733052 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m21:55:00.733926 [debug] [Thread-1  ]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m21:55:00.734630 [debug] [Thread-1  ]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m21:55:01.064095 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:01.067323 [debug] [Thread-1  ]: Using redshift connection "model.tipico.outcome"
+[0m21:55:01.068696 [debug] [Thread-1  ]: On model.tipico.outcome: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.outcome"} */
+
+  
+    
+
+  create  table
+    "dev"."timothy_chan"."outcome__dbt_tmp"
+    
+    
+    
+  as (
+    
+
+select distinct *
+,SYSDATE as ads_dtm_created
+,SYSDATE as ads_dtm_last_updated
+from "dev"."timothy_chan"."outcome_raw_data"
+  );
+[0m21:55:01.421036 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:01.435963 [debug] [Thread-1  ]: Using redshift connection "model.tipico.outcome"
+[0m21:55:01.436862 [debug] [Thread-1  ]: On model.tipico.outcome: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.outcome"} */
+alter table "dev"."timothy_chan"."outcome" rename to "outcome__dbt_backup"
+[0m21:55:01.580528 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:01.595682 [debug] [Thread-1  ]: Using redshift connection "model.tipico.outcome"
+[0m21:55:01.596811 [debug] [Thread-1  ]: On model.tipico.outcome: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.outcome"} */
+alter table "dev"."timothy_chan"."outcome__dbt_tmp" rename to "outcome"
+[0m21:55:01.673607 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:01.687322 [debug] [Thread-1  ]: On model.tipico.outcome: COMMIT
+[0m21:55:01.688746 [debug] [Thread-1  ]: Using redshift connection "model.tipico.outcome"
+[0m21:55:01.689737 [debug] [Thread-1  ]: On model.tipico.outcome: COMMIT
+[0m21:55:02.241677 [debug] [Thread-1  ]: SQL status: SUCCESS in 1.0 seconds
+[0m21:55:02.247218 [debug] [Thread-1  ]: Using redshift connection "model.tipico.outcome"
+[0m21:55:02.248421 [debug] [Thread-1  ]: On model.tipico.outcome: BEGIN
+[0m21:55:02.308787 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:02.322550 [debug] [Thread-1  ]: Applying DROP to: "dev"."timothy_chan"."outcome__dbt_backup"
+[0m21:55:02.326363 [debug] [Thread-1  ]: Using redshift connection "model.tipico.outcome"
+[0m21:55:02.327475 [debug] [Thread-1  ]: On model.tipico.outcome: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.outcome"} */
+drop table if exists "dev"."timothy_chan"."outcome__dbt_backup" cascade
+[0m21:55:02.379214 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:02.381444 [debug] [Thread-1  ]: On model.tipico.outcome: COMMIT
+[0m21:55:02.382432 [debug] [Thread-1  ]: Using redshift connection "model.tipico.outcome"
+[0m21:55:02.383141 [debug] [Thread-1  ]: On model.tipico.outcome: COMMIT
+[0m21:55:02.958796 [debug] [Thread-1  ]: SQL status: SUCCESS in 1.0 seconds
+[0m21:55:02.960532 [debug] [Thread-1  ]: Using redshift connection "model.tipico.outcome"
+[0m21:55:02.961570 [debug] [Thread-1  ]: On model.tipico.outcome: BEGIN
+[0m21:55:03.266833 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:03.272467 [debug] [Thread-1  ]: Timing info for model.tipico.outcome (execute): 21:55:00.718850 => 21:55:03.271816
+[0m21:55:03.273652 [debug] [Thread-1  ]: On model.tipico.outcome: ROLLBACK
+[0m21:55:03.318551 [debug] [Thread-1  ]: On model.tipico.outcome: Close
+[0m21:55:03.323464 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b81705a-4f2f-484c-8db4-cae22681600f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f853a0d5e80>]}
+[0m21:55:03.325665 [info ] [Thread-1  ]: 2 of 4 OK created sql table model timothy_chan.outcome ......................... [[32mSUCCESS[0m in 2.62s]
+[0m21:55:03.327963 [debug] [Thread-1  ]: Finished running node model.tipico.outcome
+[0m21:55:03.329213 [debug] [Thread-1  ]: Began running node model.tipico.participant
+[0m21:55:03.330716 [info ] [Thread-1  ]: 3 of 4 START sql table model timothy_chan.participant .......................... [RUN]
+[0m21:55:03.332906 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.tipico.outcome, now model.tipico.participant)
+[0m21:55:03.334073 [debug] [Thread-1  ]: Began compiling node model.tipico.participant
+[0m21:55:03.341718 [debug] [Thread-1  ]: Writing injected SQL for node "model.tipico.participant"
+[0m21:55:03.343626 [debug] [Thread-1  ]: Timing info for model.tipico.participant (compile): 21:55:03.334728 => 21:55:03.343051
+[0m21:55:03.344516 [debug] [Thread-1  ]: Began executing node model.tipico.participant
+[0m21:55:03.355703 [debug] [Thread-1  ]: Writing runtime sql for node "model.tipico.participant"
+[0m21:55:03.359199 [debug] [Thread-1  ]: Using redshift connection "model.tipico.participant"
+[0m21:55:03.359999 [debug] [Thread-1  ]: On model.tipico.participant: BEGIN
+[0m21:55:03.360599 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m21:55:03.361391 [debug] [Thread-1  ]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m21:55:03.362029 [debug] [Thread-1  ]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m21:55:03.698221 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:03.701159 [debug] [Thread-1  ]: Using redshift connection "model.tipico.participant"
+[0m21:55:03.702621 [debug] [Thread-1  ]: On model.tipico.participant: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.participant"} */
+
+  
+    
+
+  create  table
+    "dev"."timothy_chan"."participant__dbt_tmp"
+    
+    
+    
+  as (
+    
+
+with participant as (
+    select 
+    35458 as id
+    ,'George Washington ' as name
+    ,'HOME' as position
+    ,'GEO' as abbreviation
+)
+select *
+from participant
+  );
+[0m21:55:03.794665 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:03.812046 [debug] [Thread-1  ]: Using redshift connection "model.tipico.participant"
+[0m21:55:03.813364 [debug] [Thread-1  ]: On model.tipico.participant: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.participant"} */
+alter table "dev"."timothy_chan"."participant" rename to "participant__dbt_backup"
+[0m21:55:03.952888 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:03.967271 [debug] [Thread-1  ]: Using redshift connection "model.tipico.participant"
+[0m21:55:03.968402 [debug] [Thread-1  ]: On model.tipico.participant: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.participant"} */
+alter table "dev"."timothy_chan"."participant__dbt_tmp" rename to "participant"
+[0m21:55:04.038373 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:04.048877 [debug] [Thread-1  ]: On model.tipico.participant: COMMIT
+[0m21:55:04.050212 [debug] [Thread-1  ]: Using redshift connection "model.tipico.participant"
+[0m21:55:04.051183 [debug] [Thread-1  ]: On model.tipico.participant: COMMIT
+[0m21:55:04.800377 [debug] [Thread-1  ]: SQL status: SUCCESS in 1.0 seconds
+[0m21:55:04.806641 [debug] [Thread-1  ]: Using redshift connection "model.tipico.participant"
+[0m21:55:04.808826 [debug] [Thread-1  ]: On model.tipico.participant: BEGIN
+[0m21:55:04.856493 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:04.870529 [debug] [Thread-1  ]: Applying DROP to: "dev"."timothy_chan"."participant__dbt_backup"
+[0m21:55:04.873940 [debug] [Thread-1  ]: Using redshift connection "model.tipico.participant"
+[0m21:55:04.874828 [debug] [Thread-1  ]: On model.tipico.participant: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.participant"} */
+drop table if exists "dev"."timothy_chan"."participant__dbt_backup" cascade
+[0m21:55:04.927622 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:04.931729 [debug] [Thread-1  ]: On model.tipico.participant: COMMIT
+[0m21:55:04.933085 [debug] [Thread-1  ]: Using redshift connection "model.tipico.participant"
+[0m21:55:04.934076 [debug] [Thread-1  ]: On model.tipico.participant: COMMIT
+[0m21:55:05.517056 [debug] [Thread-1  ]: SQL status: SUCCESS in 1.0 seconds
+[0m21:55:05.521016 [debug] [Thread-1  ]: Using redshift connection "model.tipico.participant"
+[0m21:55:05.523260 [debug] [Thread-1  ]: On model.tipico.participant: BEGIN
+[0m21:55:05.549208 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:05.551611 [debug] [Thread-1  ]: Timing info for model.tipico.participant (execute): 21:55:03.345086 => 21:55:05.551101
+[0m21:55:05.552508 [debug] [Thread-1  ]: On model.tipico.participant: ROLLBACK
+[0m21:55:05.602035 [debug] [Thread-1  ]: On model.tipico.participant: Close
+[0m21:55:05.605677 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b81705a-4f2f-484c-8db4-cae22681600f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f851800a490>]}
+[0m21:55:05.607655 [info ] [Thread-1  ]: 3 of 4 OK created sql table model timothy_chan.participant ..................... [[32mSUCCESS[0m in 2.27s]
+[0m21:55:05.609249 [debug] [Thread-1  ]: Finished running node model.tipico.participant
+[0m21:55:05.610447 [debug] [Thread-1  ]: Began running node model.tipico.specifier
+[0m21:55:05.611933 [info ] [Thread-1  ]: 4 of 4 START sql table model timothy_chan.specifier ............................ [RUN]
+[0m21:55:05.613947 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly model.tipico.participant, now model.tipico.specifier)
+[0m21:55:05.615008 [debug] [Thread-1  ]: Began compiling node model.tipico.specifier
+[0m21:55:05.622256 [debug] [Thread-1  ]: Writing injected SQL for node "model.tipico.specifier"
+[0m21:55:05.624041 [debug] [Thread-1  ]: Timing info for model.tipico.specifier (compile): 21:55:05.615658 => 21:55:05.623453
+[0m21:55:05.624949 [debug] [Thread-1  ]: Began executing node model.tipico.specifier
+[0m21:55:05.635805 [debug] [Thread-1  ]: Writing runtime sql for node "model.tipico.specifier"
+[0m21:55:05.638505 [debug] [Thread-1  ]: Using redshift connection "model.tipico.specifier"
+[0m21:55:05.639071 [debug] [Thread-1  ]: On model.tipico.specifier: BEGIN
+[0m21:55:05.639569 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m21:55:05.640238 [debug] [Thread-1  ]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m21:55:05.640779 [debug] [Thread-1  ]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m21:55:05.978723 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:05.982086 [debug] [Thread-1  ]: Using redshift connection "model.tipico.specifier"
+[0m21:55:05.984071 [debug] [Thread-1  ]: On model.tipico.specifier: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.specifier"} */
+
+  
+    
+
+  create  table
+    "dev"."timothy_chan"."specifier__dbt_tmp"
+    
+    
+    
+  as (
+    
+
+with specifier as (
+    select 
+    'OVER_UNDER' as key
+    ,'5.5' as value
+    ,'DOUBLE' as type
+)
+select *
+from specifier
+  );
+[0m21:55:06.074179 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:06.091019 [debug] [Thread-1  ]: Using redshift connection "model.tipico.specifier"
+[0m21:55:06.092369 [debug] [Thread-1  ]: On model.tipico.specifier: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.specifier"} */
+alter table "dev"."timothy_chan"."specifier" rename to "specifier__dbt_backup"
+[0m21:55:06.231865 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:06.247296 [debug] [Thread-1  ]: Using redshift connection "model.tipico.specifier"
+[0m21:55:06.248421 [debug] [Thread-1  ]: On model.tipico.specifier: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.specifier"} */
+alter table "dev"."timothy_chan"."specifier__dbt_tmp" rename to "specifier"
+[0m21:55:06.318418 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:06.328354 [debug] [Thread-1  ]: On model.tipico.specifier: COMMIT
+[0m21:55:06.329590 [debug] [Thread-1  ]: Using redshift connection "model.tipico.specifier"
+[0m21:55:06.330597 [debug] [Thread-1  ]: On model.tipico.specifier: COMMIT
+[0m21:55:06.849394 [debug] [Thread-1  ]: SQL status: SUCCESS in 1.0 seconds
+[0m21:55:06.854006 [debug] [Thread-1  ]: Using redshift connection "model.tipico.specifier"
+[0m21:55:06.855888 [debug] [Thread-1  ]: On model.tipico.specifier: BEGIN
+[0m21:55:06.903292 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:06.919364 [debug] [Thread-1  ]: Applying DROP to: "dev"."timothy_chan"."specifier__dbt_backup"
+[0m21:55:06.922892 [debug] [Thread-1  ]: Using redshift connection "model.tipico.specifier"
+[0m21:55:06.923975 [debug] [Thread-1  ]: On model.tipico.specifier: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.specifier"} */
+drop table if exists "dev"."timothy_chan"."specifier__dbt_backup" cascade
+[0m21:55:06.972521 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:06.979303 [debug] [Thread-1  ]: On model.tipico.specifier: COMMIT
+[0m21:55:06.981596 [debug] [Thread-1  ]: Using redshift connection "model.tipico.specifier"
+[0m21:55:06.982417 [debug] [Thread-1  ]: On model.tipico.specifier: COMMIT
+[0m21:55:07.475389 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:07.478574 [debug] [Thread-1  ]: Using redshift connection "model.tipico.specifier"
+[0m21:55:07.480012 [debug] [Thread-1  ]: On model.tipico.specifier: BEGIN
+[0m21:55:07.502939 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:07.507859 [debug] [Thread-1  ]: Timing info for model.tipico.specifier (execute): 21:55:05.625476 => 21:55:07.506739
+[0m21:55:07.509249 [debug] [Thread-1  ]: On model.tipico.specifier: ROLLBACK
+[0m21:55:07.554816 [debug] [Thread-1  ]: On model.tipico.specifier: Close
+[0m21:55:07.559796 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': '1b81705a-4f2f-484c-8db4-cae22681600f', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f853a0bda00>]}
+[0m21:55:07.561971 [info ] [Thread-1  ]: 4 of 4 OK created sql table model timothy_chan.specifier ....................... [[32mSUCCESS[0m in 1.95s]
+[0m21:55:07.563557 [debug] [Thread-1  ]: Finished running node model.tipico.specifier
+[0m21:55:07.566999 [debug] [MainThread]: Using redshift connection "master"
+[0m21:55:07.567889 [debug] [MainThread]: On master: BEGIN
+[0m21:55:07.568712 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m21:55:07.569906 [debug] [MainThread]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m21:55:07.570824 [debug] [MainThread]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m21:55:07.893976 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:07.896812 [debug] [MainThread]: On master: COMMIT
+[0m21:55:07.898642 [debug] [MainThread]: Using redshift connection "master"
+[0m21:55:07.899732 [debug] [MainThread]: On master: COMMIT
+[0m21:55:07.948172 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m21:55:07.949921 [debug] [MainThread]: On master: Close
+[0m21:55:07.952335 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m21:55:07.953255 [debug] [MainThread]: Connection 'model.tipico.specifier' was properly closed.
+[0m21:55:07.954052 [debug] [MainThread]: Connection 'list_dev_timothy_chan' was properly closed.
+[0m21:55:07.955435 [info ] [MainThread]: 
+[0m21:55:07.956459 [info ] [MainThread]: Finished running 4 table models in 0 hours 0 minutes and 11.74 seconds (11.74s).
+[0m21:55:07.959731 [debug] [MainThread]: Command end result
+[0m21:55:07.986306 [info ] [MainThread]: 
+[0m21:55:07.987439 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m21:55:07.988025 [info ] [MainThread]: 
+[0m21:55:07.988590 [info ] [MainThread]: Done. PASS=4 WARN=0 ERROR=0 SKIP=0 TOTAL=4
+[0m21:55:07.996808 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 14.49259, "process_user_time": 6.612484, "process_kernel_time": 0.491301, "process_mem_max_rss": "131350528", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m21:55:07.998109 [debug] [MainThread]: Command `dbt run` succeeded at 21:55:07.997755 after 14.50 seconds
+[0m21:55:07.998927 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8538b27850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f8539c69040>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f853a0e0c70>]}
+[0m21:55:07.999748 [debug] [MainThread]: Flushing usage events

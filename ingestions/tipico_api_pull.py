@@ -86,6 +86,7 @@ pd.DataFrame(group_lst).to_csv('./seeds/group_raw_data_test.csv',header=group_he
 pd.DataFrame(eventDetails_lst).to_csv('./seeds/event_dtls_raw_data.csv',quoting=csv.QUOTE_ALL,index=False)
 pd.DataFrame(participant_lst).to_csv('./seeds/participants_raw_data.csv',quoting=csv.QUOTE_ALL,index=False)
 pd.DataFrame(specifier_lst).to_csv('./seeds/specifier_raw_data.csv',quoting=csv.QUOTE_ALL,index=False)
+pd.DataFrame(market_lst).to_csv('./seeds/market_raw_data.csv',quoting=csv.QUOTE_ALL,index=False)    
 
 
 # pd.DateOffset(outcome_lst).to_csv('./seeds/outcomes_raw_data_test.csv',index=False)

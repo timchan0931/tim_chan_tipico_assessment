@@ -24,8 +24,14 @@ market_lst = list()
 outcome_lst = list()
 eventDetails_lst = list()
 group_lst = list()
+participant_lst = list()
 
 for item in data:
+    for p in item.get('participants','NA'):
+                participant_lst.append({'id': p.get('id','NA')
+                                        ,'name': p.get('name','NA')
+                                        ,'position': p.get('position','NA')
+                                        ,'abbreviation': p.get('abbreviation','NA')})
     for m in item['markets']:
         #Append each JSON object
         market_lst.append({ 'id': m.get('id','NA')
@@ -58,7 +64,7 @@ for item in data:
                         ,'name': item.get('group','NA').get('name','NA')
                         ,'parentGroupName': item.get('group','NA').get('parentGroup','NA').get('name','NA')
                         ,'parentGroupId': item.get('group','NA').get('parentGroup','NA').get('id','NA')})
-
+            
 market_headers= ['market_id','name','type','parameters','status','mostBalancedLine','spgEligable']
 outcome_headers= ['outcome_id','name','isTraded','trueOdds','foramtDecimal','formatAmerican','status','trueOdds']
 group_headers= ['group_id','name','parentGroupName','parentGroupId']
@@ -75,6 +81,8 @@ pd.DataFrame(outcome_lst).to_csv('./seeds/outcome_raw_data.csv',index=False,quot
 pd.DataFrame(group_lst).to_csv('./seeds/group_raw_data_test.csv',header=group_headers,quoting=csv.QUOTE_ALL,index=False)
 
 pd.DataFrame(eventDetails_lst).to_csv('./seeds/event_dtls_raw_data.csv',quoting=csv.QUOTE_ALL,index=False)
+
+pd.DataFrame(participant_lst).to_csv('./seeds/participants_raw_data.csv',quoting=csv.QUOTE_ALL,index=False)
 
 # pd.DateOffset(outcome_lst).to_csv('./seeds/outcomes_raw_data_test.csv',index=False)
 # pd.DataFrame(outcome_lst).to_csv('./seeds/outcomes_raw_data.csv',header=outcome_headers,index=False)

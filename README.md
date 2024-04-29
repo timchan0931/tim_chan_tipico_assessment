@@ -7,4 +7,4 @@
 Run the following commands:
 - dbt seed
 - dbt run
-- dbt test
+- dbt clean

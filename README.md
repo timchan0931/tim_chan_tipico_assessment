@@ -5,5 +5,6 @@
 ### To run my assessment
 
 Run the following commands:
+- dbt seed
 - dbt run
 - dbt test

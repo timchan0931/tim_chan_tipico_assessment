@@ -1,11 +1,6 @@
 {{ config(materialized='table') }}
 
-with participant as (
-    select 
-    35458 as id
-    ,'George Washington ' as name
-    ,'HOME' as position
-    ,'GEO' as abbreviation
-)
-select *
-from participant
+select distinct *
+,SYSDATE as ads_dtm_created
+,SYSDATE as ads_dtm_last_updated
+from {{ref("participants_raw_data")}}

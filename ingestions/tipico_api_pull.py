@@ -8,7 +8,7 @@ The purpose of this script is to make an API call, save the response and store i
 This will
 '''
 
-url = "https://sportsbook-nj.tipico.us/v1/pds/lbc/events/live?lang=en&licenseId=US-NJ&limit=10"
+url = "https://sportsbook-nj.tipico.us/v1/pds/lbc/events/live?lang=en&licenseId=US-NJ&limit=25"
 
 payload = {}
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0'}
@@ -25,6 +25,7 @@ outcome_lst = list()
 eventDetails_lst = list()
 group_lst = list()
 participant_lst = list()
+specifier_lst = list()
 
 for item in data:
     for p in item.get('participants','NA'):
@@ -33,6 +34,7 @@ for item in data:
                                         ,'position': p.get('position','NA')
                                         ,'abbreviation': p.get('abbreviation','NA')})
     for m in item['markets']:
+        
         #Append each JSON object
         market_lst.append({ 'id': m.get('id','NA')
                            ,'startTime': item.get('startTime','2999-12-31 00:00:00')
@@ -45,14 +47,15 @@ for item in data:
                            ,'status': m.get('status','NA')
                            ,'mostBalancedLine': m.get('mostBalancedLine',False)
                            ,'sgpEligable': m.get('sgpEligable',False)})
-        outcome_lst.append({'id': m.get('id','NA')
-                            ,'name': m.get('name','NA')
-                            ,'isTraded': m.get('isTraded','NA')
-                            ,'trueOdds': m.get('trueOdds',0.0)
-                            ,'formatDecimal': m.get('formatDecimal',0.0)
-                            ,'formatAmerican': m.get('formatAmerican',0.0)
-                            ,'status': m.get('status','NA')
-                            ,'trueOdds': m.get('trueOdds',0.0)})
+        for outcome in m.get('outcomes','NA'):
+            outcome_lst.append({'id': outcome.get('id','NA')
+                                ,'name': outcome.get('name','NA')
+                                ,'isTraded': outcome.get('isTraded','NA')
+                                ,'trueOdds': outcome.get('trueOdds',0.0)
+                                ,'formatDecimal': outcome.get('formatDecimal',0.0)
+                                ,'formatAmerican': outcome.get('formatAmerican',0.0)
+                                ,'status': outcome.get('status','NA')
+                                ,'trueOdds': outcome.get('trueOdds',0.0)})
     eventDetails_lst.append({'block_cashout': item.get('eventDetails','NA').get('block_cashout','NA')
                         ,'longTermEventType': item.get('eventDetails','NA').get('longTermEventType','NA')
                         ,'outrightType': item.get('eventDetails','NA').get('outrightType','NA')
@@ -64,6 +67,7 @@ for item in data:
                         ,'name': item.get('group','NA').get('name','NA')
                         ,'parentGroupName': item.get('group','NA').get('parentGroup','NA').get('name','NA')
                         ,'parentGroupId': item.get('group','NA').get('parentGroup','NA').get('id','NA')})
+
             
 market_headers= ['market_id','name','type','parameters','status','mostBalancedLine','spgEligable']
 outcome_headers= ['outcome_id','name','isTraded','trueOdds','foramtDecimal','formatAmerican','status','trueOdds']
@@ -79,10 +83,10 @@ pd.DataFrame(outcome_lst).to_csv('./seeds/outcome_raw_data.csv',index=False,quot
 # pd.DataFrame(group_lst).to_json('./seeds/group_raw_data.json',index=False,orient='records',lines=False)
 
 pd.DataFrame(group_lst).to_csv('./seeds/group_raw_data_test.csv',header=group_headers,quoting=csv.QUOTE_ALL,index=False)
-
 pd.DataFrame(eventDetails_lst).to_csv('./seeds/event_dtls_raw_data.csv',quoting=csv.QUOTE_ALL,index=False)
-
 pd.DataFrame(participant_lst).to_csv('./seeds/participants_raw_data.csv',quoting=csv.QUOTE_ALL,index=False)
+pd.DataFrame(specifier_lst).to_csv('./seeds/specifier_raw_data.csv',quoting=csv.QUOTE_ALL,index=False)
+
 
 # pd.DateOffset(outcome_lst).to_csv('./seeds/outcomes_raw_data_test.csv',index=False)
 # pd.DataFrame(outcome_lst).to_csv('./seeds/outcomes_raw_data.csv',header=outcome_headers,index=False)

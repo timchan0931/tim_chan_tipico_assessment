@@ -1,5 +1,5 @@
 sources:
-  - name: my_local_data
+  - name: group_raw_data
     schema: timothy_chan
     tables:
       - name: group
@@ -16,7 +16,7 @@ sources:
           - name: parentGroupID
             description: Description of column2
 
-  - name: outcomes_data
+  - name: outcomes_raw_data
     schema: timothy_chan
     tables:
       - name: outcome

@@ -3,15 +3,23 @@ import json
 import csv
 import pandas as pd
 
+'''
+The purpose of this script is to make an API call, save the response and store it in a Pandas Data Frame. 
+This will
+'''
+
 url = "https://sportsbook-nj.tipico.us/v1/pds/lbc/events/live?lang=en&licenseId=US-NJ&limit=10"
 
 payload = {}
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0'}
 
+#Make a GET request to API URL and store the response in response 
 response = requests.request("GET", url, headers=headers, data=payload)
 
+#convert the response to JSON
 data = response.json()
 
+#Create lists to store data for each requirement
 market_lst = list()
 outcome_lst = list()
 eventDetails_lst = list()
@@ -19,6 +27,7 @@ group_lst = list()
 
 for item in data:
     for m in item['markets']:
+        #Append each JSON object
         market_lst.append({ 'id': m.get('id','NA')
                            ,'startTime': item.get('startTime','2999-12-31 00:00:00')
                            ,'messageTime': item.get('messageTime','2999-12-31 00:00:00')

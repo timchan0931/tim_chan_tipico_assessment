@@ -1,0 +1,50 @@
+sources:
+  - name: my_local_data
+    schema: timothy_chan
+    tables:
+      - name: group
+        loaded_at_field: loaded_at
+        path: /seeds/group_raw_data_test.csv
+        file_format: csv
+        columns:
+          - name: id
+            description: Description of column1
+          - name: name
+            description: Description of column2
+          - name: parentGroupName
+            description: Description of column2
+          - name: parentGroupID
+            description: Description of column2
+
+  - name: outcomes_data
+    schema: timothy_chan
+    tables:
+      - name: outcome
+        loaded_at_field: loaded_at
+        path: /seeds/outcome_raw_data.csv
+        file_format: csv
+        columns:
+          - name: id
+            description: Description of column1
+            type: varchar(255)
+          - name: name
+            description: Description of column2
+            type: varchar(255)
+          - name: isTraded
+            description: Description of column2
+          - name: trueOdds
+            description: Description of column2
+          - name: formatDecimal
+          - name: formatAmerican
+          - name: status  
+
+models:
+  - name: group
+    columns:
+      - name: id
+      - name: name
+      - name: parentGroupName
+      - name: parentGroupId
+    description: >
+      Description of my model.
+    materialized: view

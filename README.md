@@ -5,6 +5,6 @@
 ### To run my assessment
 
 Run the following commands:
-- dbt seed
+- python3 /ingestions/tipico_api_pull.py
 - dbt run
 - dbt clean

@@ -12,4 +12,4 @@ root_id
 ,abbreviation
 ,SYSDATE as tm_created
 ,SYSDATE as tm_last_updated
-from stg_participant
+from {{source('tipico_data','stg_participant')}}

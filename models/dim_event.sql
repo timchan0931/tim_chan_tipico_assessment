@@ -21,4 +21,4 @@ market_count,
 "name",
 "type",
 last_modified_time
-from stg_event
+from {{source('tipico_data','stg_event')}}

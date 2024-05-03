@@ -1,0 +1,12 @@
+version: 2
+
+sources:
+  - name: tipico_data
+    database: dev  
+    schema: timothy_chan  
+    tables:
+      - name: dim_event_dtls
+      - name: dim_outcome 
+      - name: dim_participant
+      - name: dim_market
+      - name: dim_event

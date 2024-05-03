@@ -20,4 +20,4 @@ root_id
 ,best_of_sets
 ,SYSDATE as tm_created
 ,SYSDATE as tm_last_updated
-from stg_event_dtls
+from {{source('tipico_data','stg_event_dtls')}}

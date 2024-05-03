@@ -22,4 +22,4 @@ root_id
 ,case when is_sgp_eligable = true then 1 else 0 end as is_sgp_eligable
 ,SYSDATE tm_created
 ,SYSDATE tm_last_updated
-from stg_market
+from {{source('tipico_data','stg_market')}}

@@ -24,4 +24,4 @@ root_id
 ,status
 ,SYSDATE as tm_created
 ,SYSDATE as tm_last_updated
-from stg_outcome
+from {{source('tipico_data','stg_outcome')}}

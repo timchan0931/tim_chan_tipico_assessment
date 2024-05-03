@@ -1,4 +1,16 @@
-{{ config(materialized='table') }}
+{{ config(materialized='incremental',unique_key = ['root_id','market_id','outcome_id'],
+    merge_update_columns = ['start_time'
+,'message_time'
+,'match_state'
+,'sport_type'
+,'"name"'
+,'traded_ind'
+,'true_odds'
+,'format_decimal'
+,'format_american'
+,'status'
+,'tm_last_updated']) }}
+
 
 select distinct 
 root_id

@@ -56,8 +56,19 @@ def parse_json_response(response,region,filename,bucket,key):
     group_lst = list()
     participant_lst = list()
     specifier_lst = list()
+    event_lst = list()
 
     for item in response:
+        event_lst.append({ 'root_id': item.get('id',-1),
+                            'start_Time': item.get('startTime','2999-12-31 00:00:00')
+                            ,'message_Time': item.get('messageTime','2999-12-31 00:00:00')
+                            ,'match_State': item.get('matchState','NA')
+                            ,'sport_Type': item.get('sportType','NA')
+                            ,'status': item.get('status','NA')
+                            ,'market_count': item.get('marketCount','NA')
+                            ,'type': item.get('eventType','NA')
+                            ,'name': item.get('eventName','NA')
+                            ,'last_modified_time': item.get('lastModifiedTime','2999-12-31 00:00:00')})
         # Iterate through participants[] and append each JSON object to participant_lst
         for p in item.get('participants','NA'):
                     participant_lst.append({ 'root_id': item.get('id','NA')
@@ -70,10 +81,6 @@ def parse_json_response(response,region,filename,bucket,key):
             market_id = m.get('id','NA')
             market_lst.append({'root_id': item.get('id','NA')
                             ,'market_id': m.get('id','NA')
-                            ,'start_Time': item.get('startTime','2999-12-31 00:00:00')
-                            ,'message_Time': item.get('messageTime','2999-12-31 00:00:00')
-                            ,'match_State': item.get('matchState','NA')
-                            ,'sport_Type': item.get('sportType','NA')
                             ,'name': m.get('name','NA')
                             ,'type': m.get('type','NA')
                             ,'parameters': str(m.get('parameters','[]'))
@@ -94,7 +101,6 @@ def parse_json_response(response,region,filename,bucket,key):
                                     ,'true_Odds': outcome.get('trueOdds',0.0)})
         # Iterate through eventDetails[] and append each JSON object to eventDetails_lst
         eventDetails_lst.append({'root_id': item.get('id','NA')
-                            ,'event_name': item.get('eventName','NA')
                             ,'block_cashout': item.get('eventDetails','NA').get('block_cashout','NA')
                             ,'long_Term_Event_Type': item.get('eventDetails','NA').get('longTermEventType','NA')
                             ,'outright_Type': item.get('eventDetails','NA').get('outrightType','NA')
@@ -115,12 +121,13 @@ def parse_json_response(response,region,filename,bucket,key):
     # pd.DataFrame(eventDetails_lst).to_csv('./seeds/stg_event_dtls.csv',quoting=csv.QUOTE_ALL,index=False)
     # pd.DataFrame(participant_lst).to_csv('./seeds/stg_participant.csv',quoting=csv.QUOTE_ALL,index=False)
     # pd.DataFrame(market_lst).to_csv('./seeds/stg_market.csv',quoting=csv.QUOTE_ALL,index=False)
-  
+    create_redshift_tables(pd.DataFrame(event_lst),'stg_event','timothy_chan')
     create_redshift_tables(pd.DataFrame(eventDetails_lst),'stg_event_dtls','timothy_chan')
     create_redshift_tables(pd.DataFrame(participant_lst),'stg_participant','timothy_chan')
     create_redshift_tables(pd.DataFrame(outcome_lst),'stg_outcome','timothy_chan')
     create_redshift_tables(pd.DataFrame(market_lst),'stg_market','timothy_chan')
     # create_redshift_tables(pd.DataFrame(group_lst),'stg_group','timothy_chan')
+    
 
 def main():
     #API URL

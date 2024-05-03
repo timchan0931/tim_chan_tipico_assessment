@@ -14,10 +14,6 @@
 select distinct 
 root_id
 ,market_id
-,start_time
-,message_time
-,match_state
-,sport_type
 ,"name"
 ,"type"
 ,parameters

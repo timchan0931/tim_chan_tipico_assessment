@@ -131,7 +131,7 @@ def parse_json_response(response,region,filename,bucket,key):
 
 def main():
     #API URL
-    url = "https://trading-api.tipico.us/v1/pds/lbc/events/live?licenseId=US-NJ&lang=en&limit=25"
+    url = "https://trading-api.tipico.us/v1/pds/lbc/events/live?licenseId=US-NJ&lang=en&limit=50"
 
     payload = {}
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0'}

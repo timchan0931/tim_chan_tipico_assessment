@@ -1,6 +1,5 @@
 {{ config(materialized='incremental',unique_key = ['root_id'],
-    merge_update_columns = ['root_id',
-'start_time',
+    merge_update_columns = ['start_time',
 'message_time',
 'match_state',
 'sport_type',

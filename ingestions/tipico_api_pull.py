@@ -68,7 +68,6 @@ def parse_json_response(response,region,filename,bucket,key):
         for m in item['markets']:
             # Iterate through markets[] and append each JSON object to market_lst
             market_id = m.get('id','NA')
-            print(market_id)
             market_lst.append({'root_id': item.get('id','NA')
                             ,'market_id': m.get('id','NA')
                             ,'start_Time': item.get('startTime','2999-12-31 00:00:00')
@@ -111,31 +110,17 @@ def parse_json_response(response,region,filename,bucket,key):
                             ,'parent_Group_Id': item.get('group','NA').get('parentGroup','NA').get('id','NA')})
 
     # Create a Pandas DataFrame from all the lists and convert them to a CSV file. Don't include the index and quote all columns
-    # pd.DataFrame(outcome_lst).to_csv('./seeds/outcome_raw_data.csv',index=False,quoting=csv.QUOTE_ALL)
-    create_redshift_tables(pd.DataFrame(market_lst),'market_raw_data','timothy_chan')
-    create_redshift_tables(pd.DataFrame(outcome_lst),'outcome_raw_data','timothy_chan')
-    # pd.DataFrame(group_lst).to_csv('./seeds/group_raw_data.csv',quoting=csv.QUOTE_ALL,index=False)
-    # pd.DataFrame(eventDetails_lst).to_csv('./seeds/event_dtls_raw_data.csv',quoting=csv.QUOTE_ALL,index=False)
-    create_redshift_tables(pd.DataFrame(eventDetails_lst),'event_dtls_raw_data','timothy_chan')
-    # pd.DataFrame(participant_lst).to_csv('./seeds/participants_raw_data.csv',quoting=csv.QUOTE_ALL,index=False)
-    create_redshift_tables(pd.DataFrame(participant_lst),'participants_raw_data','timothy_chan')
-    # pd.DataFrame(specifier_lst).to_csv('./seeds/specifier_raw_data.csv',quoting=csv.QUOTE_ALL,index=False)
-    # create_redshift_tables(pd.DataFrame(specifier_lst),'specifier','timothy_chan') 
-    # pd.DataFrame(market_lst).to_csv('./seeds/market_raw_data.csv',quoting=csv.QUOTE_ALL,index=False)
+    # pd.DataFrame(outcome_lst).to_csv('./seeds/stg_outcome.csv',index=False,quoting=csv.QUOTE_ALL)
+    # pd.DataFrame(group_lst).to_csv('./seeds/stg_group.csv',quoting=csv.QUOTE_ALL,index=False)
+    # pd.DataFrame(eventDetails_lst).to_csv('./seeds/stg_event_dtls.csv',quoting=csv.QUOTE_ALL,index=False)
+    # pd.DataFrame(participant_lst).to_csv('./seeds/stg_participant.csv',quoting=csv.QUOTE_ALL,index=False)
+    # pd.DataFrame(market_lst).to_csv('./seeds/stg_market.csv',quoting=csv.QUOTE_ALL,index=False)
   
-
-    # Zip up all the CSVs
-    with zipfile.ZipFile('tipico_data_pull.zip',mode='w') as tipico_data_pull:
-         tipico_data_pull.write('./seeds/market_raw_data.csv')
-         tipico_data_pull.write('./seeds/group_raw_data.csv')
-         tipico_data_pull.write('./seeds/event_dtls_raw_data.csv')
-         tipico_data_pull.write('./seeds/participants_raw_data.csv')
-         tipico_data_pull.write('./seeds/specifier_raw_data.csv')
-         tipico_data_pull.write('./seeds/outcome_raw_data.csv')
-
-    # Upload zip to S3 bucket
-    s3_client = boto3.client(service_name='s3',region_name=region)
-    s3_client.upload_file(Filename=filename,Bucket=bucket,Key=key)
+    create_redshift_tables(pd.DataFrame(eventDetails_lst),'stg_event_dtls','timothy_chan')
+    create_redshift_tables(pd.DataFrame(participant_lst),'stg_participant','timothy_chan')
+    create_redshift_tables(pd.DataFrame(outcome_lst),'stg_outcome','timothy_chan')
+    create_redshift_tables(pd.DataFrame(market_lst),'stg_market','timothy_chan')
+    # create_redshift_tables(pd.DataFrame(group_lst),'stg_group','timothy_chan')
 
 def main():
     #API URL

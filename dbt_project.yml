@@ -14,7 +14,7 @@ profile: 'tipico'
 model-paths: ["models"]
 analysis-paths: ["analyses"]
 test-paths: ["tests"]
-seed-paths: ["seeds"]
+seed-paths: ["seeds"] 
 macro-paths: ["macros"]
 snapshot-paths: ["snapshots"]
 
@@ -30,6 +30,4 @@ clean-targets:         # directories to be removed by `dbt clean`
 # files using the `{{ config(...) }}` macro.
 models:
   tipico:
-    # Config indicated by + and applies to all files under models/example/
-    tipico:
-      +materialized: table
+    +materialized: table

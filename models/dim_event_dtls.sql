@@ -1,3 +1,4 @@
+-- Create dim_event_dtls model, insert/update data incrementally
 {{ config(materialized='incremental',unique_key = ['root_id'],
     merge_update_columns = ['start_time'
 ,'block_cashout'
@@ -19,5 +20,5 @@ root_id
 ,tie_break
 ,best_of_sets
 ,SYSDATE as tm_created
-,SYSDATE as tm_last_updated
+,SYSDATE as tm_updated
 from {{source('tipico_data','stg_event_dtls')}}

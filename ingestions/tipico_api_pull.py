@@ -1,22 +1,23 @@
-import boto3.s3
 import requests
-import csv
 import pandas as pd
-import boto3
 from botocore.exceptions import ClientError
-import zipfile
 import psycopg2
 import logging
 from sqlalchemy import create_engine
+import configparser
 
 def create_redshift_tables(df,table_name,schema):
-     # Define the Redshift connection parameters
-    dbname = 'dev'
-    schema = 'timothy_chan'
-    host = 'manual-dwh-candidatetests.258845600139.us-east-1.redshift-serverless.amazonaws.com'
-    port = '5439'
-    user = 'timothy_chan'
-    password = 'POr0410!!__djif24r2fdsmbj'
+    # Read database crentials from config.ini
+    config = configparser.ConfigParser()
+    config.read('/Users/tim/tipico_git/ingestions/config.ini')
+
+    # Read from config.ini to get database details
+    dbname = config['database']['dbname']
+    schema = config['database']['schema']
+    host = config['database']['host']
+    port = config['database']['port']
+    user = config['database']['user']
+    password = config['database']['password']
 
     # Establish a connection to Redshift using psycopg2
     conn = psycopg2.connect(
@@ -26,8 +27,10 @@ def create_redshift_tables(df,table_name,schema):
         user=user,
         password=password
     )
+
     logging.basicConfig()
     logging.getLogger('sqlalchemy.engine').setLevel(logging.INFO)
+
     # Create a SQLAlchemy engine to be used by pandas. Use echo parameter to show SQL query
     engine = create_engine(f'postgresql://{user}:{password}@{host}:{port}/{dbname}',echo=True)
     
@@ -48,7 +51,7 @@ Parameters:
 -bucket: S3 bucket to upload file to
 -key: S3 object key
 '''
-def parse_json_response(response,region,filename,bucket,key):
+def parse_json_response(response):
     #Create lists to store data for each requirement
     market_lst = list()
     outcome_lst = list()
@@ -58,6 +61,7 @@ def parse_json_response(response,region,filename,bucket,key):
     specifier_lst = list()
     event_lst = list()
 
+    # Iterate through JSON response and extract fields that we need
     for item in response:
         event_lst.append({ 'root_id': item.get('id',-1),
                             'start_Time': item.get('startTime','2999-12-31 00:00:00')
@@ -114,22 +118,17 @@ def parse_json_response(response,region,filename,bucket,key):
                             ,'name': item.get('group','NA').get('name','NA')
                             ,'parent_Group_Name': item.get('group','NA').get('parentGroup','NA').get('name','NA')
                             ,'parent_Group_Id': item.get('group','NA').get('parentGroup','NA').get('id','NA')})
-
-    # Create a Pandas DataFrame from all the lists and convert them to a CSV file. Don't include the index and quote all columns
-    # pd.DataFrame(outcome_lst).to_csv('./seeds/stg_outcome.csv',index=False,quoting=csv.QUOTE_ALL)
-    # pd.DataFrame(group_lst).to_csv('./seeds/stg_group.csv',quoting=csv.QUOTE_ALL,index=False)
-    # pd.DataFrame(eventDetails_lst).to_csv('./seeds/stg_event_dtls.csv',quoting=csv.QUOTE_ALL,index=False)
-    # pd.DataFrame(participant_lst).to_csv('./seeds/stg_participant.csv',quoting=csv.QUOTE_ALL,index=False)
-    # pd.DataFrame(market_lst).to_csv('./seeds/stg_market.csv',quoting=csv.QUOTE_ALL,index=False)
+        
+    # Call create_redshift_tables() to populate stage tables
     create_redshift_tables(pd.DataFrame(event_lst),'stg_event','timothy_chan')
     create_redshift_tables(pd.DataFrame(eventDetails_lst),'stg_event_dtls','timothy_chan')
     create_redshift_tables(pd.DataFrame(participant_lst),'stg_participant','timothy_chan')
     create_redshift_tables(pd.DataFrame(outcome_lst),'stg_outcome','timothy_chan')
     create_redshift_tables(pd.DataFrame(market_lst),'stg_market','timothy_chan')
-    # create_redshift_tables(pd.DataFrame(group_lst),'stg_group','timothy_chan')
+    create_redshift_tables(pd.DataFrame(group_lst),'stg_group','timothy_chan')
     
 
-def main():
+def pull_tipico_data():
     #API URL
     url = "https://trading-api.tipico.us/v1/pds/lbc/events/live?licenseId=US-NJ&lang=en&limit=50"
 
@@ -145,11 +144,15 @@ def main():
         # For now, we are only expecting to get a JSON array/object from the API response
         if 'application/json' in content_type:
                 #Parse json response, zip it up and upload to S3 for storing
-                parse_json_response(response.json(),region='us-east-2',filename='tipico_data_pull.zip',bucket='tims-dwh-2',key='tipico/tipico_data_pull.zip')
+                parse_json_response(response.json())
         else:
                 print('Unsupported content type:', content_type)
     else:
         print('Request failed with status code:', response.status_code)
 
+def main():
+    pull_tipico_data()
+
+
 if __name__ == "__main__":
-    main()
+   main()

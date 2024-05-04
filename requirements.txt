@@ -1,6 +1,0 @@
-psycopg2-binary-2.9.3
-pandas
-boto3
-sqlalchemy
-dbt-core
-dbt-redshift

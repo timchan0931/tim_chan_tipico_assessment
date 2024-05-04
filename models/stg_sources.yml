@@ -10,3 +10,4 @@ sources:
       - name: stg_participant
       - name: stg_market
       - name: stg_event
+      - name: stg_group

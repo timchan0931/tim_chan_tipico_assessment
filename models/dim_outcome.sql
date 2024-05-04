@@ -1,3 +1,4 @@
+-- Create dim_market model, insert/update data incrementally
 {{ config(materialized='incremental',unique_key = ['root_id','market_id','outcome_id'],
     merge_update_columns = ['start_time'
 ,'message_time'
@@ -23,5 +24,5 @@ root_id
 ,format_american
 ,status
 ,SYSDATE as tm_created
-,SYSDATE as tm_last_updated
+,SYSDATE as tm_updated
 from {{source('tipico_data','stg_outcome')}}

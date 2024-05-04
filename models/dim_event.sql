@@ -1,3 +1,4 @@
+-- Create dim_event model, insert/update data incrementally
 {{ config(materialized='incremental',unique_key = ['root_id'],
     merge_update_columns = ['start_time',
 'message_time',
@@ -19,5 +20,7 @@ status,
 market_count,
 "name",
 "type",
-last_modified_time
+last_modified_time,
+SYSDATE as tm_created,
+SYSDATE as tm_updated
 from {{source('tipico_data','stg_event')}}

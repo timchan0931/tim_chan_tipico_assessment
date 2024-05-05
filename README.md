@@ -1,10 +1,13 @@
 ### Assessment Details
-    - Name: Timothy Chan
-    - Position: Data Engineer (Hoboken, NJ)
+- Name: Timothy Chan
+- Position: Data Engineer (Hoboken, NJ)
 
-### To run my assessment
+### Instructions
+Run the following commands to start up Airflow
+- unzip chan_timothy_tipico_assessment.zip
+- cd tipico_git/airflow
+- airflow standalone
 
-Run the following commands:
-- python3 /ingestions/tipico_api_pull.py
+Run the following commands to run the dbt models and data ingestion standalone (outside of airflow)
+- /usr/bin/python3 /User/tim/tipico_git/ingestions/tipico_api_pull.py
 - dbt run
-- dbt clean

@@ -48021,3 +48021,1124 @@ from stg_outcome
 [0m23:10:11.628930 [debug] [MainThread]: Command `dbt run` succeeded at 23:10:11.628732 after 8.54 seconds
 [0m23:10:11.629491 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd660f77d30>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd63044a880>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7fd661c62460>]}
 [0m23:10:11.630063 [debug] [MainThread]: Flushing usage events
+[0m23:31:37.587782 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7808fd3850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7829846fa0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7829846c70>]}
+
+
+============================== 23:31:37.594246 | eb301edc-2e2b-4bb9-aa58-ee3aa304a662 ==============================
+[0m23:31:37.594246 [info ] [MainThread]: Running with dbt=1.7.0
+[0m23:31:37.595110 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/Users/tim/.dbt', 'log_path': '/Users/tim/tipico_git/logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'invocation_command': 'dbt run --select dim_market', 'introspect': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m23:31:38.106471 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'eb301edc-2e2b-4bb9-aa58-ee3aa304a662', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7829836fd0>]}
+[0m23:31:38.225656 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'eb301edc-2e2b-4bb9-aa58-ee3aa304a662', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f78299f2580>]}
+[0m23:31:38.227953 [info ] [MainThread]: Registered adapter: redshift=1.7.7
+[0m23:31:38.243761 [debug] [MainThread]: checksum: 8434eacd4ffdf0ca3ab22bf0e2d55b45306c9599613e842b959405abc489e606, vars: {}, profile: , target: , version: 1.7.0
+[0m23:31:38.315214 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 1 files changed.
+[0m23:31:38.316156 [debug] [MainThread]: Partial parsing: updated file: tipico://models/dim_outcome.sql
+[0m23:31:38.511138 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'eb301edc-2e2b-4bb9-aa58-ee3aa304a662', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7829e45f70>]}
+[0m23:31:38.531159 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'eb301edc-2e2b-4bb9-aa58-ee3aa304a662', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7829caca60>]}
+[0m23:31:38.531974 [info ] [MainThread]: Found 7 models, 11 sources, 0 exposures, 0 metrics, 467 macros, 0 groups, 0 semantic models
+[0m23:31:38.532527 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'eb301edc-2e2b-4bb9-aa58-ee3aa304a662', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7829cac9a0>]}
+[0m23:31:38.534555 [info ] [MainThread]: 
+[0m23:31:38.535794 [debug] [MainThread]: Acquiring new redshift connection 'master'
+[0m23:31:38.537359 [debug] [ThreadPool]: Acquiring new redshift connection 'list_dev'
+[0m23:31:38.561827 [debug] [ThreadPool]: Using redshift connection "list_dev"
+[0m23:31:38.562521 [debug] [ThreadPool]: On list_dev: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "connection_name": "list_dev"} */
+
+    select distinct nspname from pg_namespace
+[0m23:31:38.563037 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:31:38.567692 [debug] [ThreadPool]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m23:31:38.568521 [debug] [ThreadPool]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m23:31:39.112718 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m23:31:39.117326 [debug] [ThreadPool]: On list_dev: Close
+[0m23:31:39.122138 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now list_dev_timothy_chan)
+[0m23:31:39.137396 [debug] [ThreadPool]: Using redshift connection "list_dev_timothy_chan"
+[0m23:31:39.138061 [debug] [ThreadPool]: On list_dev_timothy_chan: BEGIN
+[0m23:31:39.138608 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m23:31:39.140824 [debug] [ThreadPool]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m23:31:39.141414 [debug] [ThreadPool]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m23:31:39.469972 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m23:31:39.470642 [debug] [ThreadPool]: Using redshift connection "list_dev_timothy_chan"
+[0m23:31:39.471186 [debug] [ThreadPool]: On list_dev_timothy_chan: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "connection_name": "list_dev_timothy_chan"} */
+select
+        table_catalog as database,
+        table_name as name,
+        table_schema as schema,
+        'table' as type
+    from information_schema.tables
+    where table_schema ilike 'timothy_chan'
+    and table_type = 'BASE TABLE'
+    union all
+    select
+      table_catalog as database,
+      table_name as name,
+      table_schema as schema,
+      case
+        when view_definition ilike '%create materialized view%'
+          then 'materialized_view'
+        else 'view'
+      end as type
+    from information_schema.views
+    where table_schema ilike 'timothy_chan'
+[0m23:31:39.542999 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m23:31:39.545545 [debug] [ThreadPool]: On list_dev_timothy_chan: ROLLBACK
+[0m23:31:39.596370 [debug] [ThreadPool]: On list_dev_timothy_chan: Close
+[0m23:31:39.623004 [debug] [MainThread]: Using redshift connection "master"
+[0m23:31:39.623680 [debug] [MainThread]: On master: BEGIN
+[0m23:31:39.624171 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:31:39.624932 [debug] [MainThread]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m23:31:39.625460 [debug] [MainThread]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m23:31:40.090912 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m23:31:40.092654 [debug] [MainThread]: Using redshift connection "master"
+[0m23:31:40.093729 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "connection_name": "master"} */
+with
+    relation as (
+        select
+            pg_class.oid as relation_id,
+            pg_class.relname as relation_name,
+            pg_class.relnamespace as schema_id,
+            pg_namespace.nspname as schema_name,
+            pg_class.relkind as relation_type
+        from pg_class
+        join pg_namespace
+          on pg_class.relnamespace = pg_namespace.oid
+        where pg_namespace.nspname != 'information_schema'
+          and pg_namespace.nspname not like 'pg\_%'
+    ),
+    dependency as (
+        select distinct
+            coalesce(pg_rewrite.ev_class, pg_depend.objid) as dep_relation_id,
+            pg_depend.refobjid as ref_relation_id,
+            pg_depend.refclassid as ref_class_id
+        from pg_depend
+        left join pg_rewrite
+          on pg_depend.objid = pg_rewrite.oid
+        where coalesce(pg_rewrite.ev_class, pg_depend.objid) != pg_depend.refobjid
+    )
+
+select distinct
+    dep.schema_name as dependent_schema,
+    dep.relation_name as dependent_name,
+    ref.schema_name as referenced_schema,
+    ref.relation_name as referenced_name
+from dependency
+join relation ref
+    on dependency.ref_relation_id = ref.relation_id
+join relation dep
+    on dependency.dep_relation_id = dep.relation_id
+[0m23:31:40.189999 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m23:31:40.193429 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'eb301edc-2e2b-4bb9-aa58-ee3aa304a662', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7829997df0>]}
+[0m23:31:40.194657 [debug] [MainThread]: On master: ROLLBACK
+[0m23:31:40.260120 [debug] [MainThread]: Using redshift connection "master"
+[0m23:31:40.261169 [debug] [MainThread]: On master: BEGIN
+[0m23:31:40.284293 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m23:31:40.285379 [debug] [MainThread]: On master: COMMIT
+[0m23:31:40.286479 [debug] [MainThread]: Using redshift connection "master"
+[0m23:31:40.287360 [debug] [MainThread]: On master: COMMIT
+[0m23:31:40.339609 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m23:31:40.340511 [debug] [MainThread]: On master: Close
+[0m23:31:40.342445 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m23:31:40.343272 [info ] [MainThread]: 
+[0m23:31:40.347538 [debug] [Thread-1  ]: Began running node model.tipico.dim_market
+[0m23:31:40.348530 [info ] [Thread-1  ]: 1 of 1 START sql incremental model timothy_chan.dim_market ..................... [RUN]
+[0m23:31:40.349782 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_dev_timothy_chan, now model.tipico.dim_market)
+[0m23:31:40.350451 [debug] [Thread-1  ]: Began compiling node model.tipico.dim_market
+[0m23:31:40.356959 [debug] [Thread-1  ]: Writing injected SQL for node "model.tipico.dim_market"
+[0m23:31:40.359367 [debug] [Thread-1  ]: Timing info for model.tipico.dim_market (compile): 23:31:40.350864 => 23:31:40.358932
+[0m23:31:40.360000 [debug] [Thread-1  ]: Began executing node model.tipico.dim_market
+[0m23:31:40.463947 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_market"
+[0m23:31:40.464855 [debug] [Thread-1  ]: On model.tipico.dim_market: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.dim_market"} */
+
+    
+  
+    
+
+  create temporary table
+    "dim_market__dbt_tmp233140407774"
+    
+    
+    
+  as (
+    -- Create dim_market model, insert/update data incrementally
+
+
+select distinct 
+root_id
+,market_id
+,"name"
+,"type"
+,parameters
+,status
+,case when most_balanced_line then 1 else 0 end as  most_balanced_line
+,case when is_sgp_eligable  then 1 else 0 end as is_sgp_eligable
+,SYSDATE tm_created
+,SYSDATE tm_updated
+from "dev"."timothy_chan"."stg_market"
+  );
+[0m23:31:40.465453 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m23:31:40.466374 [debug] [Thread-1  ]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m23:31:40.467086 [debug] [Thread-1  ]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m23:31:40.977638 [debug] [Thread-1  ]: SQL status: SUCCESS in 1.0 seconds
+[0m23:31:41.020541 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_market"
+[0m23:31:41.021367 [debug] [Thread-1  ]: On model.tipico.dim_market: BEGIN
+[0m23:31:41.066973 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m23:31:41.067888 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_market"
+[0m23:31:41.068872 [debug] [Thread-1  ]: On model.tipico.dim_market: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.dim_market"} */
+
+      with bound_views as (
+        select
+          ordinal_position,
+          table_schema,
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+        from information_schema."columns"
+        where table_name = 'dim_market__dbt_tmp233140407774'
+    ),
+
+    unbound_views as (
+      select
+        ordinal_position,
+        view_schema,
+        col_name,
+        case
+          when col_type ilike 'character varying%' then
+            'character varying'
+          when col_type ilike 'numeric%' then 'numeric'
+          else col_type
+        end as col_type,
+        case
+          when col_type like 'character%'
+          then nullif(REGEXP_SUBSTR(col_type, '[0-9]+'), '')::int
+          else null
+        end as character_maximum_length,
+        case
+          when col_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(col_type, '[0-9,]+'), ',', 1),
+            '')::int
+          else null
+        end as numeric_precision,
+        case
+          when col_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(col_type, '[0-9,]+'), ',', 2),
+            '')::int
+          else null
+        end as numeric_scale
+
+      from pg_get_late_binding_view_cols()
+      cols(view_schema name, view_name name, col_name name,
+           col_type varchar, ordinal_position int)
+      where view_name = 'dim_market__dbt_tmp233140407774'
+    ),
+
+    external_views as (
+      select
+        columnnum,
+        schemaname,
+        columnname,
+        case
+          when external_type ilike 'character varying%' or external_type ilike 'varchar%'
+          then 'character varying'
+          when external_type ilike 'numeric%' then 'numeric'
+          else external_type
+        end as external_type,
+        case
+          when external_type like 'character%' or external_type like 'varchar%'
+          then nullif(
+            REGEXP_SUBSTR(external_type, '[0-9]+'),
+            '')::int
+          else null
+        end as character_maximum_length,
+        case
+          when external_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(external_type, '[0-9,]+'), ',', 1),
+            '')::int
+          else null
+        end as numeric_precision,
+        case
+          when external_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(external_type, '[0-9,]+'), ',', 2),
+            '')::int
+          else null
+        end as numeric_scale
+      from
+        pg_catalog.svv_external_columns
+      where
+        schemaname = 'None'
+        and tablename = 'dim_market__dbt_tmp233140407774'
+
+    ),
+
+    unioned as (
+      select * from bound_views
+      union all
+      select * from unbound_views
+      union all
+      select * from external_views
+    )
+
+    select
+      column_name,
+      data_type,
+      character_maximum_length,
+      numeric_precision,
+      numeric_scale
+
+    from unioned
+    
+    order by ordinal_position
+[0m23:31:41.215692 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m23:31:41.237871 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_market"
+[0m23:31:41.238753 [debug] [Thread-1  ]: On model.tipico.dim_market: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.dim_market"} */
+
+      with bound_views as (
+        select
+          ordinal_position,
+          table_schema,
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+        from information_schema."columns"
+        where table_name = 'dim_market'
+    ),
+
+    unbound_views as (
+      select
+        ordinal_position,
+        view_schema,
+        col_name,
+        case
+          when col_type ilike 'character varying%' then
+            'character varying'
+          when col_type ilike 'numeric%' then 'numeric'
+          else col_type
+        end as col_type,
+        case
+          when col_type like 'character%'
+          then nullif(REGEXP_SUBSTR(col_type, '[0-9]+'), '')::int
+          else null
+        end as character_maximum_length,
+        case
+          when col_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(col_type, '[0-9,]+'), ',', 1),
+            '')::int
+          else null
+        end as numeric_precision,
+        case
+          when col_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(col_type, '[0-9,]+'), ',', 2),
+            '')::int
+          else null
+        end as numeric_scale
+
+      from pg_get_late_binding_view_cols()
+      cols(view_schema name, view_name name, col_name name,
+           col_type varchar, ordinal_position int)
+      where view_name = 'dim_market'
+    ),
+
+    external_views as (
+      select
+        columnnum,
+        schemaname,
+        columnname,
+        case
+          when external_type ilike 'character varying%' or external_type ilike 'varchar%'
+          then 'character varying'
+          when external_type ilike 'numeric%' then 'numeric'
+          else external_type
+        end as external_type,
+        case
+          when external_type like 'character%' or external_type like 'varchar%'
+          then nullif(
+            REGEXP_SUBSTR(external_type, '[0-9]+'),
+            '')::int
+          else null
+        end as character_maximum_length,
+        case
+          when external_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(external_type, '[0-9,]+'), ',', 1),
+            '')::int
+          else null
+        end as numeric_precision,
+        case
+          when external_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(external_type, '[0-9,]+'), ',', 2),
+            '')::int
+          else null
+        end as numeric_scale
+      from
+        pg_catalog.svv_external_columns
+      where
+        schemaname = 'timothy_chan'
+        and tablename = 'dim_market'
+
+    ),
+
+    unioned as (
+      select * from bound_views
+      union all
+      select * from unbound_views
+      union all
+      select * from external_views
+    )
+
+    select
+      column_name,
+      data_type,
+      character_maximum_length,
+      numeric_precision,
+      numeric_scale
+
+    from unioned
+    
+    where table_schema = 'timothy_chan'
+    
+    order by ordinal_position
+[0m23:31:41.391745 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m23:31:41.417226 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_market"
+[0m23:31:41.418093 [debug] [Thread-1  ]: On model.tipico.dim_market: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.dim_market"} */
+
+      with bound_views as (
+        select
+          ordinal_position,
+          table_schema,
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+        from information_schema."columns"
+        where table_name = 'dim_market'
+    ),
+
+    unbound_views as (
+      select
+        ordinal_position,
+        view_schema,
+        col_name,
+        case
+          when col_type ilike 'character varying%' then
+            'character varying'
+          when col_type ilike 'numeric%' then 'numeric'
+          else col_type
+        end as col_type,
+        case
+          when col_type like 'character%'
+          then nullif(REGEXP_SUBSTR(col_type, '[0-9]+'), '')::int
+          else null
+        end as character_maximum_length,
+        case
+          when col_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(col_type, '[0-9,]+'), ',', 1),
+            '')::int
+          else null
+        end as numeric_precision,
+        case
+          when col_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(col_type, '[0-9,]+'), ',', 2),
+            '')::int
+          else null
+        end as numeric_scale
+
+      from pg_get_late_binding_view_cols()
+      cols(view_schema name, view_name name, col_name name,
+           col_type varchar, ordinal_position int)
+      where view_name = 'dim_market'
+    ),
+
+    external_views as (
+      select
+        columnnum,
+        schemaname,
+        columnname,
+        case
+          when external_type ilike 'character varying%' or external_type ilike 'varchar%'
+          then 'character varying'
+          when external_type ilike 'numeric%' then 'numeric'
+          else external_type
+        end as external_type,
+        case
+          when external_type like 'character%' or external_type like 'varchar%'
+          then nullif(
+            REGEXP_SUBSTR(external_type, '[0-9]+'),
+            '')::int
+          else null
+        end as character_maximum_length,
+        case
+          when external_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(external_type, '[0-9,]+'), ',', 1),
+            '')::int
+          else null
+        end as numeric_precision,
+        case
+          when external_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(external_type, '[0-9,]+'), ',', 2),
+            '')::int
+          else null
+        end as numeric_scale
+      from
+        pg_catalog.svv_external_columns
+      where
+        schemaname = 'timothy_chan'
+        and tablename = 'dim_market'
+
+    ),
+
+    unioned as (
+      select * from bound_views
+      union all
+      select * from unbound_views
+      union all
+      select * from external_views
+    )
+
+    select
+      column_name,
+      data_type,
+      character_maximum_length,
+      numeric_precision,
+      numeric_scale
+
+    from unioned
+    
+    where table_schema = 'timothy_chan'
+    
+    order by ordinal_position
+[0m23:31:41.532093 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m23:31:41.559305 [debug] [Thread-1  ]: Writing runtime sql for node "model.tipico.dim_market"
+[0m23:31:41.564455 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_market"
+[0m23:31:41.565143 [debug] [Thread-1  ]: On model.tipico.dim_market: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.dim_market"} */
+
+      
+        
+            delete from "dev"."timothy_chan"."dim_market"
+            using "dim_market__dbt_tmp233140407774"
+            where (
+                
+                    "dim_market__dbt_tmp233140407774".root_id = "dev"."timothy_chan"."dim_market".root_id
+                    and 
+                
+                    "dim_market__dbt_tmp233140407774".market_id = "dev"."timothy_chan"."dim_market".market_id
+                    
+                
+                
+            );
+[0m23:31:41.683883 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m23:31:41.685142 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_market"
+[0m23:31:41.686310 [debug] [Thread-1  ]: On model.tipico.dim_market: insert into "dev"."timothy_chan"."dim_market" ("root_id", "market_id", "name", "type", "parameters", "status", "most_balanced_line", "is_sgp_eligable", "tm_created", "tm_updated")
+    (
+        select "root_id", "market_id", "name", "type", "parameters", "status", "most_balanced_line", "is_sgp_eligable", "tm_created", "tm_updated"
+        from "dim_market__dbt_tmp233140407774"
+    )
+[0m23:31:41.771037 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m23:31:41.798392 [debug] [Thread-1  ]: On model.tipico.dim_market: COMMIT
+[0m23:31:41.799401 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_market"
+[0m23:31:41.800017 [debug] [Thread-1  ]: On model.tipico.dim_market: COMMIT
+[0m23:31:42.436499 [debug] [Thread-1  ]: SQL status: SUCCESS in 1.0 seconds
+[0m23:31:42.438348 [debug] [Thread-1  ]: Timing info for model.tipico.dim_market (execute): 23:31:40.360364 => 23:31:42.437966
+[0m23:31:42.438974 [debug] [Thread-1  ]: On model.tipico.dim_market: Close
+[0m23:31:42.440577 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'eb301edc-2e2b-4bb9-aa58-ee3aa304a662', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7829b5df40>]}
+[0m23:31:42.442275 [info ] [Thread-1  ]: 1 of 1 OK created sql incremental model timothy_chan.dim_market ................ [[32mSUCCESS[0m in 2.09s]
+[0m23:31:42.443190 [debug] [Thread-1  ]: Finished running node model.tipico.dim_market
+[0m23:31:42.445519 [debug] [MainThread]: Using redshift connection "master"
+[0m23:31:42.446098 [debug] [MainThread]: On master: BEGIN
+[0m23:31:42.446586 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m23:31:42.447837 [debug] [MainThread]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m23:31:42.448388 [debug] [MainThread]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m23:31:42.762042 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m23:31:42.763055 [debug] [MainThread]: On master: COMMIT
+[0m23:31:42.763904 [debug] [MainThread]: Using redshift connection "master"
+[0m23:31:42.764498 [debug] [MainThread]: On master: COMMIT
+[0m23:31:42.811893 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m23:31:42.813032 [debug] [MainThread]: On master: Close
+[0m23:31:42.814990 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:31:42.815730 [debug] [MainThread]: Connection 'model.tipico.dim_market' was properly closed.
+[0m23:31:42.818864 [info ] [MainThread]: 
+[0m23:31:42.819749 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 4.28 seconds (4.28s).
+[0m23:31:42.825402 [debug] [MainThread]: Command end result
+[0m23:31:42.941289 [info ] [MainThread]: 
+[0m23:31:42.942170 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m23:31:42.942691 [info ] [MainThread]: 
+[0m23:31:42.943273 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m23:31:42.948298 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 5.475291, "process_user_time": 4.651599, "process_kernel_time": 0.465331, "process_mem_max_rss": "121516032", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m23:31:42.949551 [debug] [MainThread]: Command `dbt run` succeeded at 23:31:42.949212 after 5.48 seconds
+[0m23:31:42.950524 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7808fd3850>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7829a9b520>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f782944fdc0>]}
+[0m23:31:42.951221 [debug] [MainThread]: Flushing usage events
+[0m23:33:15.349709 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e30db3700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e00343e20>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e003435b0>]}
+
+
+============================== 23:33:15.356840 | a7288b1a-34fe-426e-a1ae-cd97d3ae753e ==============================
+[0m23:33:15.356840 [info ] [MainThread]: Running with dbt=1.7.0
+[0m23:33:15.357708 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/tim/.dbt', 'fail_fast': 'False', 'version_check': 'True', 'log_path': '/Users/tim/tipico_git/logs', 'debug': 'False', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'invocation_command': 'dbt run --select dim_event', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'introspect': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m23:33:15.891629 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'project_id', 'label': 'a7288b1a-34fe-426e-a1ae-cd97d3ae753e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e00343640>]}
+[0m23:33:16.010565 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'adapter_info', 'label': 'a7288b1a-34fe-426e-a1ae-cd97d3ae753e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e21851c70>]}
+[0m23:33:16.012763 [info ] [MainThread]: Registered adapter: redshift=1.7.7
+[0m23:33:16.028909 [debug] [MainThread]: checksum: 8434eacd4ffdf0ca3ab22bf0e2d55b45306c9599613e842b959405abc489e606, vars: {}, profile: , target: , version: 1.7.0
+[0m23:33:16.100154 [debug] [MainThread]: Partial parsing enabled: 0 files deleted, 0 files added, 0 files changed.
+[0m23:33:16.100761 [debug] [MainThread]: Partial parsing enabled, no changes found, skipping parsing
+[0m23:33:16.110348 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'load_project', 'label': 'a7288b1a-34fe-426e-a1ae-cd97d3ae753e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e219ea0d0>]}
+[0m23:33:16.127640 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'resource_counts', 'label': 'a7288b1a-34fe-426e-a1ae-cd97d3ae753e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e10e79a60>]}
+[0m23:33:16.128401 [info ] [MainThread]: Found 7 models, 11 sources, 0 exposures, 0 metrics, 467 macros, 0 groups, 0 semantic models
+[0m23:33:16.128950 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a7288b1a-34fe-426e-a1ae-cd97d3ae753e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e10e79970>]}
+[0m23:33:16.130893 [info ] [MainThread]: 
+[0m23:33:16.132164 [debug] [MainThread]: Acquiring new redshift connection 'master'
+[0m23:33:16.134538 [debug] [ThreadPool]: Acquiring new redshift connection 'list_dev'
+[0m23:33:16.160293 [debug] [ThreadPool]: Using redshift connection "list_dev"
+[0m23:33:16.161021 [debug] [ThreadPool]: On list_dev: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "connection_name": "list_dev"} */
+
+    select distinct nspname from pg_namespace
+[0m23:33:16.161614 [debug] [ThreadPool]: Opening a new connection, currently in state init
+[0m23:33:16.167783 [debug] [ThreadPool]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m23:33:16.168922 [debug] [ThreadPool]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m23:33:16.718620 [debug] [ThreadPool]: SQL status: SUCCESS in 1.0 seconds
+[0m23:33:16.721453 [debug] [ThreadPool]: On list_dev: Close
+[0m23:33:16.725310 [debug] [ThreadPool]: Re-using an available connection from the pool (formerly list_dev, now list_dev_timothy_chan)
+[0m23:33:16.739747 [debug] [ThreadPool]: Using redshift connection "list_dev_timothy_chan"
+[0m23:33:16.740534 [debug] [ThreadPool]: On list_dev_timothy_chan: BEGIN
+[0m23:33:16.741032 [debug] [ThreadPool]: Opening a new connection, currently in state closed
+[0m23:33:16.742090 [debug] [ThreadPool]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m23:33:16.742616 [debug] [ThreadPool]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m23:33:17.066781 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m23:33:17.067521 [debug] [ThreadPool]: Using redshift connection "list_dev_timothy_chan"
+[0m23:33:17.068080 [debug] [ThreadPool]: On list_dev_timothy_chan: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "connection_name": "list_dev_timothy_chan"} */
+select
+        table_catalog as database,
+        table_name as name,
+        table_schema as schema,
+        'table' as type
+    from information_schema.tables
+    where table_schema ilike 'timothy_chan'
+    and table_type = 'BASE TABLE'
+    union all
+    select
+      table_catalog as database,
+      table_name as name,
+      table_schema as schema,
+      case
+        when view_definition ilike '%create materialized view%'
+          then 'materialized_view'
+        else 'view'
+      end as type
+    from information_schema.views
+    where table_schema ilike 'timothy_chan'
+[0m23:33:17.134570 [debug] [ThreadPool]: SQL status: SUCCESS in 0.0 seconds
+[0m23:33:17.137218 [debug] [ThreadPool]: On list_dev_timothy_chan: ROLLBACK
+[0m23:33:17.186100 [debug] [ThreadPool]: On list_dev_timothy_chan: Close
+[0m23:33:17.202710 [debug] [MainThread]: Using redshift connection "master"
+[0m23:33:17.203309 [debug] [MainThread]: On master: BEGIN
+[0m23:33:17.203781 [debug] [MainThread]: Opening a new connection, currently in state init
+[0m23:33:17.204478 [debug] [MainThread]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m23:33:17.204981 [debug] [MainThread]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m23:33:17.525071 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m23:33:17.527851 [debug] [MainThread]: Using redshift connection "master"
+[0m23:33:17.529515 [debug] [MainThread]: On master: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "connection_name": "master"} */
+with
+    relation as (
+        select
+            pg_class.oid as relation_id,
+            pg_class.relname as relation_name,
+            pg_class.relnamespace as schema_id,
+            pg_namespace.nspname as schema_name,
+            pg_class.relkind as relation_type
+        from pg_class
+        join pg_namespace
+          on pg_class.relnamespace = pg_namespace.oid
+        where pg_namespace.nspname != 'information_schema'
+          and pg_namespace.nspname not like 'pg\_%'
+    ),
+    dependency as (
+        select distinct
+            coalesce(pg_rewrite.ev_class, pg_depend.objid) as dep_relation_id,
+            pg_depend.refobjid as ref_relation_id,
+            pg_depend.refclassid as ref_class_id
+        from pg_depend
+        left join pg_rewrite
+          on pg_depend.objid = pg_rewrite.oid
+        where coalesce(pg_rewrite.ev_class, pg_depend.objid) != pg_depend.refobjid
+    )
+
+select distinct
+    dep.schema_name as dependent_schema,
+    dep.relation_name as dependent_name,
+    ref.schema_name as referenced_schema,
+    ref.relation_name as referenced_name
+from dependency
+join relation ref
+    on dependency.ref_relation_id = ref.relation_id
+join relation dep
+    on dependency.dep_relation_id = dep.relation_id
+[0m23:33:17.625621 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m23:33:17.632247 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'runnable_timing', 'label': 'a7288b1a-34fe-426e-a1ae-cd97d3ae753e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e2186af70>]}
+[0m23:33:17.634995 [debug] [MainThread]: On master: ROLLBACK
+[0m23:33:17.702383 [debug] [MainThread]: Using redshift connection "master"
+[0m23:33:17.703711 [debug] [MainThread]: On master: BEGIN
+[0m23:33:17.726725 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m23:33:17.728166 [debug] [MainThread]: On master: COMMIT
+[0m23:33:17.729499 [debug] [MainThread]: Using redshift connection "master"
+[0m23:33:17.739269 [debug] [MainThread]: On master: COMMIT
+[0m23:33:17.789976 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m23:33:17.790906 [debug] [MainThread]: On master: Close
+[0m23:33:17.792566 [info ] [MainThread]: Concurrency: 1 threads (target='dev')
+[0m23:33:17.793238 [info ] [MainThread]: 
+[0m23:33:17.797292 [debug] [Thread-1  ]: Began running node model.tipico.dim_event
+[0m23:33:17.798268 [info ] [Thread-1  ]: 1 of 1 START sql incremental model timothy_chan.dim_event ...................... [RUN]
+[0m23:33:17.799652 [debug] [Thread-1  ]: Re-using an available connection from the pool (formerly list_dev_timothy_chan, now model.tipico.dim_event)
+[0m23:33:17.800572 [debug] [Thread-1  ]: Began compiling node model.tipico.dim_event
+[0m23:33:17.806601 [debug] [Thread-1  ]: Writing injected SQL for node "model.tipico.dim_event"
+[0m23:33:17.808526 [debug] [Thread-1  ]: Timing info for model.tipico.dim_event (compile): 23:33:17.800964 => 23:33:17.808106
+[0m23:33:17.809141 [debug] [Thread-1  ]: Began executing node model.tipico.dim_event
+[0m23:33:17.912160 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_event"
+[0m23:33:17.912916 [debug] [Thread-1  ]: On model.tipico.dim_event: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.dim_event"} */
+
+    
+  
+    
+
+  create temporary table
+    "dim_event__dbt_tmp233317858607"
+    
+    
+    
+  as (
+    -- Create dim_event model, insert/update data incrementally
+
+
+SELECT distinct 
+root_id,
+start_time,
+message_time,
+match_state,
+sport_type,
+status,
+market_count,
+"name",
+"type",
+last_modified_time,
+SYSDATE as tm_created,
+SYSDATE as tm_updated
+from "dev"."timothy_chan"."stg_event"
+  );
+[0m23:33:17.913510 [debug] [Thread-1  ]: Opening a new connection, currently in state closed
+[0m23:33:17.914297 [debug] [Thread-1  ]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m23:33:17.914870 [debug] [Thread-1  ]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m23:33:18.295367 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m23:33:18.349863 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_event"
+[0m23:33:18.350848 [debug] [Thread-1  ]: On model.tipico.dim_event: BEGIN
+[0m23:33:18.397317 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m23:33:18.398402 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_event"
+[0m23:33:18.399817 [debug] [Thread-1  ]: On model.tipico.dim_event: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.dim_event"} */
+
+      with bound_views as (
+        select
+          ordinal_position,
+          table_schema,
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+        from information_schema."columns"
+        where table_name = 'dim_event__dbt_tmp233317858607'
+    ),
+
+    unbound_views as (
+      select
+        ordinal_position,
+        view_schema,
+        col_name,
+        case
+          when col_type ilike 'character varying%' then
+            'character varying'
+          when col_type ilike 'numeric%' then 'numeric'
+          else col_type
+        end as col_type,
+        case
+          when col_type like 'character%'
+          then nullif(REGEXP_SUBSTR(col_type, '[0-9]+'), '')::int
+          else null
+        end as character_maximum_length,
+        case
+          when col_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(col_type, '[0-9,]+'), ',', 1),
+            '')::int
+          else null
+        end as numeric_precision,
+        case
+          when col_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(col_type, '[0-9,]+'), ',', 2),
+            '')::int
+          else null
+        end as numeric_scale
+
+      from pg_get_late_binding_view_cols()
+      cols(view_schema name, view_name name, col_name name,
+           col_type varchar, ordinal_position int)
+      where view_name = 'dim_event__dbt_tmp233317858607'
+    ),
+
+    external_views as (
+      select
+        columnnum,
+        schemaname,
+        columnname,
+        case
+          when external_type ilike 'character varying%' or external_type ilike 'varchar%'
+          then 'character varying'
+          when external_type ilike 'numeric%' then 'numeric'
+          else external_type
+        end as external_type,
+        case
+          when external_type like 'character%' or external_type like 'varchar%'
+          then nullif(
+            REGEXP_SUBSTR(external_type, '[0-9]+'),
+            '')::int
+          else null
+        end as character_maximum_length,
+        case
+          when external_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(external_type, '[0-9,]+'), ',', 1),
+            '')::int
+          else null
+        end as numeric_precision,
+        case
+          when external_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(external_type, '[0-9,]+'), ',', 2),
+            '')::int
+          else null
+        end as numeric_scale
+      from
+        pg_catalog.svv_external_columns
+      where
+        schemaname = 'None'
+        and tablename = 'dim_event__dbt_tmp233317858607'
+
+    ),
+
+    unioned as (
+      select * from bound_views
+      union all
+      select * from unbound_views
+      union all
+      select * from external_views
+    )
+
+    select
+      column_name,
+      data_type,
+      character_maximum_length,
+      numeric_precision,
+      numeric_scale
+
+    from unioned
+    
+    order by ordinal_position
+[0m23:33:18.548745 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m23:33:18.596223 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_event"
+[0m23:33:18.597474 [debug] [Thread-1  ]: On model.tipico.dim_event: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.dim_event"} */
+
+      with bound_views as (
+        select
+          ordinal_position,
+          table_schema,
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+        from information_schema."columns"
+        where table_name = 'dim_event'
+    ),
+
+    unbound_views as (
+      select
+        ordinal_position,
+        view_schema,
+        col_name,
+        case
+          when col_type ilike 'character varying%' then
+            'character varying'
+          when col_type ilike 'numeric%' then 'numeric'
+          else col_type
+        end as col_type,
+        case
+          when col_type like 'character%'
+          then nullif(REGEXP_SUBSTR(col_type, '[0-9]+'), '')::int
+          else null
+        end as character_maximum_length,
+        case
+          when col_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(col_type, '[0-9,]+'), ',', 1),
+            '')::int
+          else null
+        end as numeric_precision,
+        case
+          when col_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(col_type, '[0-9,]+'), ',', 2),
+            '')::int
+          else null
+        end as numeric_scale
+
+      from pg_get_late_binding_view_cols()
+      cols(view_schema name, view_name name, col_name name,
+           col_type varchar, ordinal_position int)
+      where view_name = 'dim_event'
+    ),
+
+    external_views as (
+      select
+        columnnum,
+        schemaname,
+        columnname,
+        case
+          when external_type ilike 'character varying%' or external_type ilike 'varchar%'
+          then 'character varying'
+          when external_type ilike 'numeric%' then 'numeric'
+          else external_type
+        end as external_type,
+        case
+          when external_type like 'character%' or external_type like 'varchar%'
+          then nullif(
+            REGEXP_SUBSTR(external_type, '[0-9]+'),
+            '')::int
+          else null
+        end as character_maximum_length,
+        case
+          when external_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(external_type, '[0-9,]+'), ',', 1),
+            '')::int
+          else null
+        end as numeric_precision,
+        case
+          when external_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(external_type, '[0-9,]+'), ',', 2),
+            '')::int
+          else null
+        end as numeric_scale
+      from
+        pg_catalog.svv_external_columns
+      where
+        schemaname = 'timothy_chan'
+        and tablename = 'dim_event'
+
+    ),
+
+    unioned as (
+      select * from bound_views
+      union all
+      select * from unbound_views
+      union all
+      select * from external_views
+    )
+
+    select
+      column_name,
+      data_type,
+      character_maximum_length,
+      numeric_precision,
+      numeric_scale
+
+    from unioned
+    
+    where table_schema = 'timothy_chan'
+    
+    order by ordinal_position
+[0m23:33:18.745771 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m23:33:18.786452 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_event"
+[0m23:33:18.787425 [debug] [Thread-1  ]: On model.tipico.dim_event: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.dim_event"} */
+
+      with bound_views as (
+        select
+          ordinal_position,
+          table_schema,
+          column_name,
+          data_type,
+          character_maximum_length,
+          numeric_precision,
+          numeric_scale
+
+        from information_schema."columns"
+        where table_name = 'dim_event'
+    ),
+
+    unbound_views as (
+      select
+        ordinal_position,
+        view_schema,
+        col_name,
+        case
+          when col_type ilike 'character varying%' then
+            'character varying'
+          when col_type ilike 'numeric%' then 'numeric'
+          else col_type
+        end as col_type,
+        case
+          when col_type like 'character%'
+          then nullif(REGEXP_SUBSTR(col_type, '[0-9]+'), '')::int
+          else null
+        end as character_maximum_length,
+        case
+          when col_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(col_type, '[0-9,]+'), ',', 1),
+            '')::int
+          else null
+        end as numeric_precision,
+        case
+          when col_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(col_type, '[0-9,]+'), ',', 2),
+            '')::int
+          else null
+        end as numeric_scale
+
+      from pg_get_late_binding_view_cols()
+      cols(view_schema name, view_name name, col_name name,
+           col_type varchar, ordinal_position int)
+      where view_name = 'dim_event'
+    ),
+
+    external_views as (
+      select
+        columnnum,
+        schemaname,
+        columnname,
+        case
+          when external_type ilike 'character varying%' or external_type ilike 'varchar%'
+          then 'character varying'
+          when external_type ilike 'numeric%' then 'numeric'
+          else external_type
+        end as external_type,
+        case
+          when external_type like 'character%' or external_type like 'varchar%'
+          then nullif(
+            REGEXP_SUBSTR(external_type, '[0-9]+'),
+            '')::int
+          else null
+        end as character_maximum_length,
+        case
+          when external_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(external_type, '[0-9,]+'), ',', 1),
+            '')::int
+          else null
+        end as numeric_precision,
+        case
+          when external_type like 'numeric%'
+          then nullif(
+            SPLIT_PART(REGEXP_SUBSTR(external_type, '[0-9,]+'), ',', 2),
+            '')::int
+          else null
+        end as numeric_scale
+      from
+        pg_catalog.svv_external_columns
+      where
+        schemaname = 'timothy_chan'
+        and tablename = 'dim_event'
+
+    ),
+
+    unioned as (
+      select * from bound_views
+      union all
+      select * from unbound_views
+      union all
+      select * from external_views
+    )
+
+    select
+      column_name,
+      data_type,
+      character_maximum_length,
+      numeric_precision,
+      numeric_scale
+
+    from unioned
+    
+    where table_schema = 'timothy_chan'
+    
+    order by ordinal_position
+[0m23:33:18.902360 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m23:33:18.927047 [debug] [Thread-1  ]: Writing runtime sql for node "model.tipico.dim_event"
+[0m23:33:18.931371 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_event"
+[0m23:33:18.931988 [debug] [Thread-1  ]: On model.tipico.dim_event: /* {"app": "dbt", "dbt_version": "1.7.0", "profile_name": "tipico", "target_name": "dev", "node_id": "model.tipico.dim_event"} */
+
+      
+        
+            delete from "dev"."timothy_chan"."dim_event"
+            using "dim_event__dbt_tmp233317858607"
+            where (
+                
+                    "dim_event__dbt_tmp233317858607".root_id = "dev"."timothy_chan"."dim_event".root_id
+                    
+                
+                
+            );
+[0m23:33:19.050759 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m23:33:19.051775 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_event"
+[0m23:33:19.052558 [debug] [Thread-1  ]: On model.tipico.dim_event: insert into "dev"."timothy_chan"."dim_event" ("root_id", "start_time", "message_time", "match_state", "sport_type", "status", "market_count", "name", "type", "last_modified_time", "tm_created", "tm_updated")
+    (
+        select "root_id", "start_time", "message_time", "match_state", "sport_type", "status", "market_count", "name", "type", "last_modified_time", "tm_created", "tm_updated"
+        from "dim_event__dbt_tmp233317858607"
+    )
+[0m23:33:19.132325 [debug] [Thread-1  ]: SQL status: SUCCESS in 0.0 seconds
+[0m23:33:19.163649 [debug] [Thread-1  ]: On model.tipico.dim_event: COMMIT
+[0m23:33:19.164416 [debug] [Thread-1  ]: Using redshift connection "model.tipico.dim_event"
+[0m23:33:19.164971 [debug] [Thread-1  ]: On model.tipico.dim_event: COMMIT
+[0m23:33:19.797378 [debug] [Thread-1  ]: SQL status: SUCCESS in 1.0 seconds
+[0m23:33:19.800969 [debug] [Thread-1  ]: Timing info for model.tipico.dim_event (execute): 23:33:17.809500 => 23:33:19.800144
+[0m23:33:19.802317 [debug] [Thread-1  ]: On model.tipico.dim_event: Close
+[0m23:33:19.804757 [debug] [Thread-1  ]: Sending event: {'category': 'dbt', 'action': 'run_model', 'label': 'a7288b1a-34fe-426e-a1ae-cd97d3ae753e', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e317a4670>]}
+[0m23:33:19.807331 [info ] [Thread-1  ]: 1 of 1 OK created sql incremental model timothy_chan.dim_event ................. [[32mSUCCESS[0m in 2.01s]
+[0m23:33:19.808906 [debug] [Thread-1  ]: Finished running node model.tipico.dim_event
+[0m23:33:19.811782 [debug] [MainThread]: Using redshift connection "master"
+[0m23:33:19.812630 [debug] [MainThread]: On master: BEGIN
+[0m23:33:19.813388 [debug] [MainThread]: Opening a new connection, currently in state closed
+[0m23:33:19.814531 [debug] [MainThread]: Redshift adapter: Establishing connection using ssl with `sslmode` set to 'prefer'.To connect without ssl, set `sslmode` to 'disable'.
+[0m23:33:19.815310 [debug] [MainThread]: Redshift adapter: Connecting to redshift with username/password based auth...
+[0m23:33:20.139212 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m23:33:20.139927 [debug] [MainThread]: On master: COMMIT
+[0m23:33:20.140553 [debug] [MainThread]: Using redshift connection "master"
+[0m23:33:20.141044 [debug] [MainThread]: On master: COMMIT
+[0m23:33:20.197198 [debug] [MainThread]: SQL status: SUCCESS in 0.0 seconds
+[0m23:33:20.197867 [debug] [MainThread]: On master: Close
+[0m23:33:20.199103 [debug] [MainThread]: Connection 'master' was properly closed.
+[0m23:33:20.199605 [debug] [MainThread]: Connection 'model.tipico.dim_event' was properly closed.
+[0m23:33:20.200203 [info ] [MainThread]: 
+[0m23:33:20.200772 [info ] [MainThread]: Finished running 1 incremental model in 0 hours 0 minutes and 4.07 seconds (4.07s).
+[0m23:33:20.201779 [debug] [MainThread]: Command end result
+[0m23:33:20.216688 [info ] [MainThread]: 
+[0m23:33:20.217384 [info ] [MainThread]: [32mCompleted successfully[0m
+[0m23:33:20.217895 [info ] [MainThread]: 
+[0m23:33:20.218458 [info ] [MainThread]: Done. PASS=1 WARN=0 ERROR=0 SKIP=0 TOTAL=1
+[0m23:33:20.221508 [debug] [MainThread]: Resource report: {"command_name": "run", "command_success": true, "command_wall_clock_time": 4.984804, "process_user_time": 4.401539, "process_kernel_time": 0.400741, "process_mem_max_rss": "114978816", "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m23:33:20.222373 [debug] [MainThread]: Command `dbt run` succeeded at 23:33:20.222166 after 4.99 seconds
+[0m23:33:20.222978 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e30db3700>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e2192e340>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f7e10e79370>]}
+[0m23:33:20.223597 [debug] [MainThread]: Flushing usage events

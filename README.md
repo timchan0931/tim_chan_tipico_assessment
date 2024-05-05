@@ -5,6 +5,7 @@
 ### Instructions
 Run the following commands to start up Airflow
 Note: I am using Airflow 2.6.1
+- Run: tipico_ddls.sql on Redshift database under dev.timothy_chan
 - Run: unzip chan_timothy_tipico_assessment.zip
 - Run: cd tipico_git/airflow
 - Run: airflow standalone

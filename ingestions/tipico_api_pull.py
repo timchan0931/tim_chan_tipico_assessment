@@ -1,6 +1,5 @@
 import requests
 import pandas as pd
-from botocore.exceptions import ClientError
 import psycopg2
 import logging
 from sqlalchemy import create_engine
@@ -41,6 +40,7 @@ def create_redshift_tables(df,table_name,schema):
     # Insert data from dataframe to table
     df.to_sql(table_name,engine,index=False,if_exists='append',schema=schema)
 
+    # Close connection
     conn.close()
 
 '''
@@ -74,50 +74,63 @@ def parse_json_response(response):
                             ,'name': item.get('eventName','NA')
                             ,'last_modified_time': item.get('lastModifiedTime','2999-12-31 00:00:00')})
         # Iterate through participants[] and append each JSON object to participant_lst
-        for p in item.get('participants','NA'):
-                    participant_lst.append({ 'root_id': item.get('id','NA')
-                                            ,'participant_id': p.get('id','NA')
-                                            ,'name': p.get('name','NA')
-                                            ,'position': p.get('position','NA')
-                                            ,'abbreviation': p.get('abbreviation','NA')})
-        for m in item['markets']:
-            # Iterate through markets[] and append each JSON object to market_lst
-            market_id = m.get('id','NA')
-            market_lst.append({'root_id': item.get('id','NA')
-                            ,'market_id': m.get('id','NA')
-                            ,'name': m.get('name','NA')
-                            ,'type': m.get('type','NA')
-                            ,'parameters': str(m.get('parameters','[]'))
-                            ,'status': m.get('status','NA')
-                            ,'most_Balanced_Line': m.get('mostBalancedLine',False)
-                            ,'is_sgp_Eligable': m.get('sgpEligable',False)})
-            # Iterate through outcomes[] and append each JSON object to outcome_lst
-            for outcome in m.get('outcomes','NA'):
-                outcome_lst.append({'root_id': item.get('id','NA')
-                                    ,'market_id': market_id,
-                                    'outcome_id': outcome.get('id','NA')
-                                    ,'name': outcome.get('name','NA')
-                                    ,'traded_ind': outcome.get('isTraded','NA')
-                                    ,'true_Odds': outcome.get('trueOdds',0.0)
-                                    ,'format_Decimal': outcome.get('formatDecimal',0.0)
-                                    ,'format_American': outcome.get('formatAmerican',0.0)
-                                    ,'status': outcome.get('status','NA')
-                                    ,'true_Odds': outcome.get('trueOdds',0.0)})
+        if 'participants' in item.keys():
+            for p in item.get('participants','NA'):
+                        participant_lst.append({ 'root_id': item.get('id','NA')
+                                                ,'participant_id': p.get('id','NA')
+                                                ,'name': p.get('name','NA')
+                                                ,'position': p.get('position','NA')
+                                                ,'abbreviation': p.get('abbreviation','NA')})
+        if 'markets' in item.keys():
+            for m in item['markets']:
+                # Iterate through markets[] and append each JSON object to market_lst
+                market_id = m.get('id','NA')
+                market_lst.append({'root_id': item.get('id','NA')
+                                ,'market_id': m.get('id','NA')
+                                ,'name': m.get('name','NA')
+                                ,'type': m.get('type','NA')
+                                ,'parameters': str(m.get('parameters','[]'))
+                                ,'status': m.get('status','NA')
+                                ,'most_Balanced_Line': m.get('mostBalancedLine',False)
+                                ,'is_sgp_Eligable': m.get('sgpEligable',False)})
+                # Iterate through outcomes[] and append each JSON object to outcome_lst
+                if 'outcomes' in m.keys():
+                    for outcome in m.get('outcomes','NA'):
+                        outcome_lst.append({'root_id': item.get('id','NA')
+                                            ,'market_id': market_id,
+                                            'outcome_id': outcome.get('id','NA')
+                                            ,'name': outcome.get('name','NA')
+                                            ,'traded_ind': outcome.get('isTraded','NA')
+                                            ,'true_Odds': outcome.get('trueOdds',0.0)
+                                            ,'format_Decimal': outcome.get('formatDecimal',0.0)
+                                            ,'format_American': outcome.get('formatAmerican',0.0)
+                                            ,'status': outcome.get('status','NA')
+                                        ,'true_Odds': outcome.get('trueOdds',0.0)})
+                if 'specifier' in m.keys():
+                    print(type(m['specifier']))
+                    for s in m['specifier']:
+                        print(s.get('key'))
+                        specifier_lst.append({'root_id':item.get('id','NA')
+                                                ,'key': s.get('key','NA'),
+                                            'value': s.get('value', 'NA')
+                                            ,'type': s.get('type','NA')})
         # Iterate through eventDetails[] and append each JSON object to eventDetails_lst
-        eventDetails_lst.append({'root_id': item.get('id','NA')
-                            ,'block_cashout': item.get('eventDetails','NA').get('block_cashout','NA')
-                            ,'long_Term_Event_Type': item.get('eventDetails','NA').get('longTermEventType','NA')
-                            ,'outright_Type': item.get('eventDetails','NA').get('outrightType','NA')
-                            ,'sub_group_Name_Key': item.get('eventDetails','NA').get('subgroupNameKey','NA')
-                            ,'sub_group_Id_Key': item.get('eventDetails','NA').get('subgroupIdKey',-9999)
-                            ,'tie_break': item.get('eventDetails','NA').get('tiebreak','NA')
-                            ,'best_of_sets': item.get('eventDetails','NA').get('best_of_sets','NA')})
-        # Iterate through group[] and append each JSON object to group_lst
-        group_lst.append({'root_id': item.get('id','NA')
-                            ,'group_id': item.get('group','NA').get('id',-9999)
-                            ,'name': item.get('group','NA').get('name','NA')
-                            ,'parent_Group_Name': item.get('group','NA').get('parentGroup','NA').get('name','NA')
-                            ,'parent_Group_Id': item.get('group','NA').get('parentGroup','NA').get('id','NA')})
+        if 'eventDetails' in item.keys():
+            eventDetails_lst.append({'root_id': item.get('id','NA')
+                                ,'block_cashout': item.get('eventDetails','NA').get('block_cashout','NA')
+                                ,'long_Term_Event_Type': item.get('eventDetails','NA').get('longTermEventType','NA')
+                                ,'outright_Type': item.get('eventDetails','NA').get('outrightType','NA')
+                                ,'sub_group_Name_Key': item.get('eventDetails','NA').get('subgroupNameKey','NA')
+                                ,'sub_group_Id_Key': item.get('eventDetails','NA').get('subgroupIdKey',-9999)
+                                ,'tie_break': item.get('eventDetails','NA').get('tiebreak','NA')
+                                ,'best_of_sets': item.get('eventDetails','NA').get('best_of_sets','NA')})
+        if 'group' in item.keys():
+            # Iterate through group[] and append each JSON object to group_lst
+            group_lst.append({'root_id': item.get('id','NA')
+                                ,'group_id': item.get('group','NA').get('id',-9999)
+                                ,'name': item.get('group','NA').get('name','NA')
+                                ,'parent_Group_Name': item.get('group','NA').get('parentGroup','NA').get('name','NA')
+                                ,'parent_Group_Id': item.get('group','NA').get('parentGroup','NA').get('id','NA')})
         
     # Call create_redshift_tables() to populate stage tables
     create_redshift_tables(pd.DataFrame(event_lst),'stg_event','timothy_chan')
@@ -126,17 +139,17 @@ def parse_json_response(response):
     create_redshift_tables(pd.DataFrame(outcome_lst),'stg_outcome','timothy_chan')
     create_redshift_tables(pd.DataFrame(market_lst),'stg_market','timothy_chan')
     create_redshift_tables(pd.DataFrame(group_lst),'stg_group','timothy_chan')
+    create_redshift_tables(pd.DataFrame(specifier_lst),'stg_specifier','timothy_chan')
     
 
 def pull_tipico_data():
     #API URL
     url = "https://trading-api.tipico.us/v1/pds/lbc/events/live?licenseId=US-NJ&lang=en&limit=50"
 
-    payload = {}
     headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; rv:91.0) Gecko/20100101 Firefox/91.0'}
 
     #Make a GET request to API URL and store the response in response 
-    response = requests.request("GET", url, headers=headers, data=payload)
+    response = requests.request("GET", url, headers=headers)
     # Only parse JSON Object if status is OK
     print(response.status_code)
     if response.status_code == 200:

@@ -19,8 +19,8 @@ root_id
 ,"type"
 ,parameters
 ,status
-,case when most_balanced_line = true then 1 else 0 end as  most_balanced_line
-,case when is_sgp_eligable = true then 1 else 0 end as is_sgp_eligable
+,case when most_balanced_line then 1 else 0 end as  most_balanced_line
+,case when is_sgp_eligable  then 1 else 0 end as is_sgp_eligable
 ,SYSDATE tm_created
 ,SYSDATE tm_updated
 from {{source('tipico_data','stg_market')}}

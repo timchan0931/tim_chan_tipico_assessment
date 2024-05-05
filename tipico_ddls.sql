@@ -112,6 +112,8 @@ CREATE TABLE IF NOT EXISTS timothy_chan.dim_event
 	,name VARCHAR(255)   ENCODE lzo
 	,"type" VARCHAR(255)   ENCODE lzo
 	,last_modified_time TIMESTAMP encode lzo
+	,tm_created timestamp encode lzo
+	,tm_updated timestamp encode lzo
 )
 DISTSTYLE AUTO
 ;
@@ -125,8 +127,10 @@ CREATE TABLE IF NOT EXISTS timothy_chan.dim_market
 	,"type" VARCHAR(255)   ENCODE lzo
 	,"parameters" VARCHAR(255)   ENCODE lzo
 	,status VARCHAR(255)   ENCODE lzo
-	,most_balanced_line BOOLEAN   ENCODE RAW
-	,is_sgp_eligable BOOLEAN   ENCODE RAW
+	,most_balanced_line integer   ENCODE RAW
+	,is_sgp_eligable integer   ENCODE raw
+	,tm_created timestamp encode lzo
+	,tm_updated timestamp encode lzo
 )
 DISTSTYLE AUTO
 ;
@@ -138,11 +142,13 @@ CREATE TABLE IF NOT EXISTS timothy_chan.dim_outcome
 	,market_id varchar(255) encode lzo
 	,outcome_id VARCHAR(255)   ENCODE lzo
 	,name VARCHAR(255)   ENCODE lzo
-	,traded_ind bool   
+	,traded_ind integer   
 	,true_odds DECIMAL(10,2)   ENCODE az64
 	,format_decimal DECIMAL(10,2)   ENCODE az64
 	,format_american DECIMAL(10,2)   ENCODE az64
 	,status VARCHAR(7)   ENCODE lzo
+	,tm_created timestamp encode lzo
+	,tm_updated timestamp encode lzo
 )
 DISTSTYLE AUTO
 ;
@@ -151,13 +157,15 @@ drop table if exists timothy_chan.dim_event_dtls;
 CREATE TABLE IF NOT EXISTS timothy_chan.dim_event_dtls
 (	
 	root_id INTEGER  encode lzo
-	,block_cashout BOOLEAN   ENCODE RAW
+	,block_cashout integer   ENCODE RAW
 	,long_term_event_type VARCHAR(255)   ENCODE lzo
 	,outright_type VARCHAR(255)   ENCODE lzo
 	,sub_group_name_key VARCHAR(255)   ENCODE lzo
 	,sub_group_id_key INTEGER   ENCODE az64
 	,tie_break VARCHAR(255)   ENCODE lzo
 	,best_of_sets VARCHAR(255)   ENCODE lzo
+	,tm_created timestamp encode lzo
+	,tm_updated timestamp encode lzo
 )
 DISTSTYLE AUTO
 ;
@@ -170,6 +178,8 @@ CREATE TABLE IF NOT EXISTS timothy_chan.dim_participant
 	,name VARCHAR(255)   ENCODE lzo
 	,"position" VARCHAR(25)   ENCODE lzo
 	,abbreviation VARCHAR(25)   ENCODE lzo
+	,tm_created timestamp encode lzo
+	,tm_updated timestamp encode lzo
 )
 DISTSTYLE AUTO
 ;
@@ -177,9 +187,26 @@ DISTSTYLE AUTO
 drop table if exists timothy_chan.dim_specifier;
 CREATE TABLE IF NOT EXISTS timothy_chan.dim_specifier
 (
-	"key" VARCHAR(255)   ENCODE lzo
+	root_id integer encode lzo
+	,"key" VARCHAR(255)   ENCODE lzo
 	,value VARCHAR(255)   ENCODE lzo
 	,"type" VARCHAR(255)   ENCODE lzo
+	,tm_created timestamp encode lzo
+	,tm_updated timestamp encode lzo
+)
+DISTSTYLE AUTO
+;
+
+DROP table if exists timothy_chan.dim_group;
+CREATE TABLE IF NOT EXISTS timothy_chan.dim_group
+(
+	root_id INTEGER   ENCODE az64
+	,group_id INTEGER   ENCODE az64
+	,name VARCHAR(255)   ENCODE lzo
+	,parent_group_name VARCHAR(255)   ENCODE lzo
+	,parent_group_id INTEGER   ENCODE az64
+	,tm_created timestamp encode lzo
+	,tm_updated timestamp encode lzo
 )
 DISTSTYLE AUTO
 ;

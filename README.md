@@ -12,6 +12,6 @@ Note: I am using Airflow 2.6.1
 
 Run the following commands to run the dbt models and data ingestion standalone (outside of airflow)
 Note: Before running dbt run, please make sure you are in /tipico_git.  The Airflow dag, navigates one directory back to (tipico_git/) before running the dbt commands.
-- Navigate to directory that you unzipped chan_timothy_tipico_assessment.zip in
+- Navigate to directory that you cloned my repo in
 - Run: python3 ingestions/tipico_api_pull.py
 - Run: dbt run

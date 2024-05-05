@@ -9,5 +9,5 @@ Run the following commands to start up Airflow
 - airflow standalone
 
 Run the following commands to run the dbt models and data ingestion standalone (outside of airflow)
-- /usr/bin/python3 /User/tim/tipico_git/ingestions/tipico_api_pull.py
+- /usr/bin/python3 tipico_git/ingestions/tipico_api_pull.py
 - dbt run
